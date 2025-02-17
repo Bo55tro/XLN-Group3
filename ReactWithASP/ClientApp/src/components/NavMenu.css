@@ -4,6 +4,32 @@
   word-break: break-all;
 }
 
+.custom-navbar {
+  background-color: #003064;
+  padding: 10px 20px;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-btn {
+  background-color: #003064;
+  color: white;
+  border: 2px solid #003064;
+  border-radius: 5px;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar-btn:hover {
+  background-color: white;
+  color: #003064 !important;
+}
+
 html {
   font-size: 14px;
 }
