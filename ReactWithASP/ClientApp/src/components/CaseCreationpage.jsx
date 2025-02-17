@@ -53,7 +53,7 @@ const CaseCreationpage = () => {
     };
 
     return (
-        <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <div className="max-w-lg mx-auto p-6 bg-blue shadow-lg rounded-lg">
             <h2 className="text-xl font-bold mb-4">Create Case</h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
