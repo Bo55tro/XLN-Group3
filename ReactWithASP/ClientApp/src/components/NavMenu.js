@@ -38,6 +38,9 @@ export class NavMenu extends Component {
               <NavItem>
                 <NavLink tag={Link} className="btn navbar-btn" to="/create-case">Create a Case</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={Link} className="text-dark" to="/create-case">Create Case</NavLink>
+              </NavItem>
             </ul>
           </Collapse>
         </Navbar>
