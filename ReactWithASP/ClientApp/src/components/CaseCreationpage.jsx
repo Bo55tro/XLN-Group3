@@ -6,10 +6,10 @@ const CaseCreationpage = () => {
     const [details, setDetails] = useState([]);
     const [clients, setClients] = useState([]);
 
-    const [selectedcategory, setSelectedcategory] = useState("");
-    const [selectedreason, setSelectedreason] = useState("");
-    const [selecteddetail, setSelecteddetail] = useState("");
-    const [selectedclient, setSelectedclient] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedReason, setSelectedReason] = useState("");
+    const [selectedDetail, setSelectedDetail] = useState("");
+    const [selectedClient, setSelectedClient] = useState("");
     const [comments, setComments] = useState("");
 
     //Fetching category data
@@ -22,32 +22,41 @@ const CaseCreationpage = () => {
 
     //Fetching category data when its changed or updated
     useEffect(() => {
-        if (selectedcategory) {
-            fetch(`/api/cases/reasons/${selectedcategory}`)
+        if (selectedCategory) {
+            fetch(`/api/cases/reasons/${selectedCategory}`)
                 .then((res) => res.json())
                 .then((data) => setReasons(data))
                 .catch((err) => console.error("There has been an error in fetching reasons :", err));
         }
-    }, [selectedcategory]);
+    }, [selectedCategory]);
     //Fetching reason data when its changed or updated
     useEffect(() => {
-        if (selectedreason) {
-            fetch(`api/cases/details/${selectedreason}`)
+        if (selectedReason) {
+            fetch(`/api/cases/details/${selectedReason}`)
                 .then((res) => res.json())
                 .then((data) => setDetails(data))
                 .catch((err) => console.error("There has been an error in fetching details :", err));
         }
-    },[selectedreason]);
+    },[selectedReason]);
     useEffect(() => {
         fetch("/api/cases/clients")
             .then((res) => res.json())
             .then((data) => setClients(data))
             .catch((err) => console.error("There has been an error in fetching the client."));
     },[]);
+    useEffect(() => {
+        setSelectedReason("");  // Reset reason when category changes
+        setReasons([]);  // Clear old reasons
+    }, [selectedCategory]);
+    
+    useEffect(() => {
+        setSelectedDetail("");  // Reset detail when reason changes
+        setDetails([]);  // Clear old details
+    }, [selectedReason]);
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({
-            selectedcategory,selectedreason,selecteddetail,selectedclient,comments
+            selectedCategory,selectedReason,selectedDetail,selectedClient,comments
         });
         alert("Case submitted.");
     };
@@ -62,8 +71,8 @@ const CaseCreationpage = () => {
                     <label className="block text-sm font-medium">Category</label>
                     <select
                         className="w-full p-2 border rounded"
-                        value={selectedcategory}
-                        onChange={(e) => setSelectedcategory(e.target.value)}
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}
                     >
                         <option value="">Select Category</option>
                         {categories.map((cat) => (
@@ -79,9 +88,9 @@ const CaseCreationpage = () => {
                     <label className="block text-sm font-medium">Reason</label>
                     <select
                         className="w-full p-2 border rounded"
-                        value={selectedreason}
-                        onChange={(e) => setSelectedreason(e.target.value)}
-                        disabled={!selectedcategory}
+                        value={selectedReason}
+                        onChange={(e) => setSelectedReason(e.target.value)}
+                        disabled={!selectedCategory}
                     >
                         <option value="">Select Reason</option>
                         {reasons.map((reason) => (
@@ -97,9 +106,9 @@ const CaseCreationpage = () => {
                     <label className="block text-sm font-medium">Detail</label>
                     <select
                         className="w-full p-2 border rounded"
-                        value={selecteddetail}
-                        onChange={(e) => setSelecteddetail(e.target.value)}
-                        disabled={!selectedreason}
+                        value={selectedDetail}
+                        onChange={(e) => setSelectedDetail(e.target.value)}
+                        disabled={!selectedReason}
                     >
                         <option value="">Select Detail</option>
                         {details.map((detail) => (
@@ -127,8 +136,8 @@ const CaseCreationpage = () => {
                     <label className="block text-sm font-medium">Client</label>
                     <select
                         className="w-full p-2 border rounded"
-                        value={selectedclient}
-                        onChange={(e) => setSelectedclient(e.target.value)}
+                        value={selectedClient}
+                        onChange={(e) => setSelectedClient(e.target.value)}
                     >
                         <option value="">Select Client</option>
                         {clients.map((client) => (
