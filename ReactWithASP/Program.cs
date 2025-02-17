@@ -25,6 +25,7 @@ builder.Services.AddCors(options =>
 
 // ✅ Add Services
 builder.Services.AddControllersWithViews();
+builder.Services.AddControllers(); 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -44,6 +45,7 @@ else
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.MapControllers();
 
 // ✅ Apply CORS Before Authorization
 app.UseCors(MyAllowSpecificOrigins);
