@@ -85,13 +85,66 @@ const CaseCreationpage = () => {
         setSelectedDetail("");
         setDetails([]);
     }, [selectedReason]);
-    const handleSubmit = (e) => {
+
+    // Submit the form
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log({
-            selectedCategory,selectedReason,selectedDetail,selectedClient,comments
-        });
-        alert("Case submitted.");
+    
+        if (!selectedCategory || !selectedReason || !selectedDetail || !selectedClient) {
+            alert("Please select all fields before submitting.");
+            return;
+        }
+
+        const today = new Date();
+        const formattedDate = today.toISOString().split("T")[0];
+        
+        const caseData = {
+            categoryId: parseInt(selectedCategory),
+            reasonId: parseInt(selectedReason),
+            detailId: parseInt(selectedDetail),
+            clientId: parseInt(selectedClient),
+            caseComments: comments || "No comments provided",
+            caseNotes: "Notes from Manager...",
+            caseDate: formattedDate,
+            caseStatus: "Open",
+            agentId: 1 // Hardcoded for now
+        };
+
+        console.log("Submitting case:", JSON.stringify(caseData, null, 2));
+    
+        try {
+            const response = await fetch("https://localhost:7192/api/cases/create", {
+                method: "POST",
+                headers: { 
+                    "Accept": "application/json",
+                    "Content-Type": "application/json" 
+                },
+                body: JSON.stringify(caseData),
+            });
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorText}`);
+            }
+    
+            const data = await response.json();
+            console.log("Case created successfully:", data);
+            alert("Case successfully created!");
+    
+            // ✅ Reset the form
+            setSelectedCategory("");
+            setSelectedReason("");
+            setSelectedDetail("");
+            setSelectedClient("");
+            setComments("");
+    
+        } catch (error) {
+            console.error("Error submitting case:", error);
+            alert("Failed to create case. Check console for details.");
+        }
     };
+    
+    
 
     return (
         <div className = "createcase-container">
