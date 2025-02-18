@@ -17,21 +17,21 @@ const CaseCreationpage = () => {
     useEffect(() => {
         fetch("https://localhost:7192/api/cases/categories", { 
             method: "GET", 
-            headers: { "Accept": "application/json" } // ✅ Remove unnecessary headers
+            headers: { "Accept": "application/json" }
         })
         .then((res) => {
-            console.log("Response headers:", res.headers); // Debugging
+            console.log("Response headers:", res.headers);
             return res.json();
         })
         .then((data) => {
-            console.log("Fetched categories:", data); // Debugging
+            console.log("Fetched categories:", data);
             setCategories(data);
         })
         .catch((err) => console.error("Error fetching categories:", err));
     }, []);
     
     useEffect(() => {
-        console.log("Selected Category:", selectedCategory);  // Debugging
+        console.log("Selected Category:", selectedCategory);
     }, [selectedCategory]);
     
     
@@ -62,7 +62,7 @@ const CaseCreationpage = () => {
             })
             .then((res) => res.json())
             .then((data) => {
-                console.log("Fetched details:", data); // Debugging
+                console.log("Fetched details:", data);
                 setDetails(data);
             })
             .catch((err) => console.error("Error fetching details:", err));
@@ -71,19 +71,19 @@ const CaseCreationpage = () => {
 
 
     useEffect(() => {
-        fetch("https://localhost:7192/api/cases/clients") // ✅ Corrected to "clients"
+        fetch("https://localhost:7192/api/cases/clients")
             .then((res) => res.json())
             .then((data) => setClients(data))
             .catch((err) => console.error("Error fetching clients:", err));
     }, []);
     useEffect(() => {
-        setSelectedReason("");  // Reset reason when category changes
-        setReasons([]);  // Clear old reasons
+        setSelectedReason("");
+        setReasons([]);
     }, [selectedCategory]);
     
     useEffect(() => {
-        setSelectedDetail("");  // Reset detail when reason changes
-        setDetails([]);  // Clear old details
+        setSelectedDetail("");
+        setDetails([]);
     }, [selectedReason]);
     const handleSubmit = (e) => {
         e.preventDefault();
