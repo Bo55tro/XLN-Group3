@@ -1,5 +1,6 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import './Casecreationpage.css';
+
 
 const CaseCreationpage = () => {
     const [categories, setCategories] = useState([]);
@@ -7,48 +8,87 @@ const CaseCreationpage = () => {
     const [details, setDetails] = useState([]);
     const [clients, setClients] = useState([]);
 
-    const [selectedcategory, setSelectedcategory] = useState("");
-    const [selectedreason, setSelectedreason] = useState("");
-    const [selecteddetail, setSelecteddetail] = useState("");
-    const [selectedclient, setSelectedclient] = useState("");
+    const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedReason, setSelectedReason] = useState("");
+    const [selectedDetail, setSelectedDetail] = useState("");
+    const [selectedClient, setSelectedClient] = useState("");
     const [comments, setComments] = useState("");
 
-    //Fetching category data
     useEffect(() => {
-        fetch("/api/cases/categories") //Placeholder API call
-            .then((res) => res.json())
-            .then((data) => setCategories(data))
-            .catch((err) => console.error("There has been an error in fetching categories :", err));
+        fetch("https://localhost:7192/api/cases/categories", { 
+            method: "GET", 
+            headers: { "Accept": "application/json" } // ✅ Remove unnecessary headers
+        })
+        .then((res) => {
+            console.log("Response headers:", res.headers); // Debugging
+            return res.json();
+        })
+        .then((data) => {
+            console.log("Fetched categories:", data); // Debugging
+            setCategories(data);
+        })
+        .catch((err) => console.error("Error fetching categories:", err));
     }, []);
+    
+    useEffect(() => {
+        console.log("Selected Category:", selectedCategory);  // Debugging
+    }, [selectedCategory]);
+    
+    
+    // Fetch Reasons when Category is Selected
+    useEffect(() => {
+        setSelectedReason("");
+        setReasons([]); 
+        if (selectedCategory) {
+            fetch(`https://localhost:7192/api/cases/reasons/${selectedCategory}`, {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Fetched reasons:", data);
+                setReasons(data);
+            })
+            .catch((err) => console.error("Error fetching reasons:", err));
+        }
+    }, [selectedCategory]);
 
-    //Fetching category data when its changed or updated
+    // Fetch Details when Reason is Selected
     useEffect(() => {
-        if (selectedcategory) {
-            fetch(`/api/cases/reasons/${selectedcategory}`)
-                .then((res) => res.json())
-                .then((data) => setReasons(data))
-                .catch((err) => console.error("There has been an error in fetching reasons :", err));
+        if (selectedReason) {
+            fetch(`https://localhost:7192/api/cases/details/${selectedReason}`, {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Fetched details:", data); // Debugging
+                setDetails(data);
+            })
+            .catch((err) => console.error("Error fetching details:", err));
         }
-    }, [selectedcategory]);
-    //Fetching reason data when its changed or updated
+    }, [selectedReason]);
+
+
     useEffect(() => {
-        if (selectedreason) {
-            fetch(`api/cases/details/${selectedreason}`)
-                .then((res) => res.json())
-                .then((data) => setDetails(data))
-                .catch((err) => console.error("There has been an error in fetching details :", err));
-        }
-    },[selectedreason]);
-    useEffect(() => {
-        fetch("/api/cases/clients")
+        fetch("https://localhost:7192/api/cases/clients") // ✅ Corrected to "clients"
             .then((res) => res.json())
             .then((data) => setClients(data))
-            .catch((err) => console.error("There has been an error in fetching the client."));
-    },[]);
+            .catch((err) => console.error("Error fetching clients:", err));
+    }, []);
+    useEffect(() => {
+        setSelectedReason("");  // Reset reason when category changes
+        setReasons([]);  // Clear old reasons
+    }, [selectedCategory]);
+    
+    useEffect(() => {
+        setSelectedDetail("");  // Reset detail when reason changes
+        setDetails([]);  // Clear old details
+    }, [selectedReason]);
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({
-            selectedcategory,selectedreason,selecteddetail,selectedclient,comments
+            selectedCategory,selectedReason,selectedDetail,selectedClient,comments
         });
         alert("Case submitted.");
     };
@@ -62,8 +102,8 @@ const CaseCreationpage = () => {
                     <label className="createcase-label">CATEGORY</label>
                     <select
                         className="createcase-select"
-                        value={selectedcategory}
-                        onChange={(e) => setSelectedcategory(e.target.value)}
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}
                     >
                         <option value="">Select Category</option>
                         {categories.map((cat) => (
@@ -78,9 +118,9 @@ const CaseCreationpage = () => {
                     <label className="createcase-label">REASON</label>
                     <select
                         className="createcase-select"
-                        value={selectedreason}
-                        onChange={(e) => setSelectedreason(e.target.value)}
-                        disabled={!selectedcategory}
+                        value={selectedReason}
+                        onChange={(e) => setSelectedReason(e.target.value)}
+                        disabled={!selectedCategory}
                     >
                         <option value="">Select Reason</option>
                         {reasons.map((reason) => (
@@ -94,9 +134,9 @@ const CaseCreationpage = () => {
                     <label className="createcase-label">DETAIL</label>
                     <select
                         className="createcase-select"
-                        value={selecteddetail}
-                        onChange={(e) => setSelecteddetail(e.target.value)}
-                        disabled={!selectedreason}
+                        value={selectedDetail}
+                        onChange={(e) => setSelectedDetail(e.target.value)}
+                        disabled={!selectedReason}
                     >
                         <option value="">Select Detail</option>
                         {details.map((detail) => (
@@ -119,7 +159,7 @@ const CaseCreationpage = () => {
 
                 <div>
                     <label className="createcase-label">CLIENT</label>
-                    <select className="createcase-select" value={selectedclient} onChange={(e) => setSelectedclient(e.target.value)}>
+                    <select className="createcase-select" value={selectedClient} onChange={(e) => setSelectedClient(e.target.value)}>
                         <option value="">Select Client</option>
                         {clients.map((client) => (
                             <option key={client.clientId} value={client.clientId}>
