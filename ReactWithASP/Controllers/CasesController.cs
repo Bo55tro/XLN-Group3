@@ -22,7 +22,6 @@ namespace ReactWithASP.Controllers {
             return await _context.Categories.ToListAsync();
         }
 
-
         [HttpGet("reasons/{categoryId}")]
         public async Task<ActionResult<IEnumerable<Reason>>> GetReasons(int categoryId)
         {
@@ -30,7 +29,6 @@ namespace ReactWithASP.Controllers {
                 .Where(r => r.CategoryId == categoryId)
                 .ToListAsync();
         }
-
 
         [HttpGet("details/{reasonId}")]
         public async Task<ActionResult<IEnumerable<Detail>>> GetDetails(int reasonId)
@@ -40,15 +38,13 @@ namespace ReactWithASP.Controllers {
                 .ToListAsync();
         }
 
-
         [HttpGet("clients")]
         public async Task<ActionResult<IEnumerable<Client>>> GetClients()
         {
             return await _context.Clients.ToListAsync();
         }
 
-
-                [HttpPost("create")]
+        [HttpPost("create")]
         public async Task<IActionResult> CreateCase([FromBody] Case newCase)
         {
             if (newCase == null)

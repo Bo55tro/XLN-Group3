@@ -12,38 +12,68 @@ const CaseCreationpage = () => {
     const [selectedClient, setSelectedClient] = useState("");
     const [comments, setComments] = useState("");
 
-    //Fetching category data
     useEffect(() => {
-        fetch("/api/cases/categories") //Placeholder API call
-            .then((res) => res.json())
-            .then((data) => setCategories(data))
-            .catch((err) => console.error("There has been an error in fetching categories :", err));
+        fetch("https://localhost:7192/api/cases/categories", { 
+            method: "GET", 
+            headers: { "Accept": "application/json" } // ✅ Remove unnecessary headers
+        })
+        .then((res) => {
+            console.log("Response headers:", res.headers); // Debugging
+            return res.json();
+        })
+        .then((data) => {
+            console.log("Fetched categories:", data); // Debugging
+            setCategories(data);
+        })
+        .catch((err) => console.error("Error fetching categories:", err));
     }, []);
-
-    //Fetching category data when its changed or updated
+    
     useEffect(() => {
+        console.log("Selected Category:", selectedCategory);  // Debugging
+    }, [selectedCategory]);
+    
+    
+    // Fetch Reasons when Category is Selected
+    useEffect(() => {
+        setSelectedReason("");
+        setReasons([]); 
         if (selectedCategory) {
-            fetch(`/api/cases/reasons/${selectedCategory}`)
-                .then((res) => res.json())
-                .then((data) => setReasons(data))
-                .catch((err) => console.error("There has been an error in fetching reasons :", err));
+            fetch(`https://localhost:7192/api/cases/reasons/${selectedCategory}`, {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Fetched reasons:", data);
+                setReasons(data);
+            })
+            .catch((err) => console.error("Error fetching reasons:", err));
         }
     }, [selectedCategory]);
-    //Fetching reason data when its changed or updated
+
+    // Fetch Details when Reason is Selected
     useEffect(() => {
         if (selectedReason) {
-            fetch(`/api/cases/details/${selectedReason}`)
-                .then((res) => res.json())
-                .then((data) => setDetails(data))
-                .catch((err) => console.error("There has been an error in fetching details :", err));
+            fetch(`https://localhost:7192/api/cases/details/${selectedReason}`, {
+                method: "GET",
+                headers: { "Accept": "application/json" }
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Fetched details:", data); // Debugging
+                setDetails(data);
+            })
+            .catch((err) => console.error("Error fetching details:", err));
         }
-    },[selectedReason]);
+    }, [selectedReason]);
+
+
     useEffect(() => {
-        fetch("/api/cases/clients")
+        fetch("https://localhost:7192/api/cases/clients") // ✅ Corrected to "clients"
             .then((res) => res.json())
             .then((data) => setClients(data))
-            .catch((err) => console.error("There has been an error in fetching the client."));
-    },[]);
+            .catch((err) => console.error("Error fetching clients:", err));
+    }, []);
     useEffect(() => {
         setSelectedReason("");  // Reset reason when category changes
         setReasons([]);  // Clear old reasons

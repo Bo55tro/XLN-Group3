@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ✅ 1. Add Services BEFORE app.Build()
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite("Data Source=Database/XLN-Database.db"));
 
 builder.Services.AddCors(options =>
 {
