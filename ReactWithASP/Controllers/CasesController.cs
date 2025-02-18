@@ -5,6 +5,7 @@ using ReactWithASP.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text.Json;
 
 namespace ReactWithASP.Controllers {
     [Route("api/cases")]
@@ -49,13 +50,41 @@ namespace ReactWithASP.Controllers {
         {
             if (newCase == null)
             {
-                return BadRequest("Invalid case data.");
+                return BadRequest("Invalid case data: Request body is empty.");
             }
 
-            _context.Cases.Add(newCase);
-            await _context.SaveChangesAsync();
-            return Ok(newCase);
+            // ✅ Ensure the date is properly parsed
+            if (!DateTime.TryParse(newCase.caseDate.ToString(), out DateTime parsedDate))
+            {
+                return BadRequest(new { message = "Invalid date format. Please use YYYY-MM-DD." });
+            }
+
+            newCase.caseDate = parsedDate;
+
+            // ✅ Debugging: Log the incoming data
+            Console.WriteLine(JsonSerializer.Serialize(newCase));
+
+            Console.WriteLine($"Received case: {JsonSerializer.Serialize(newCase)}");
+
+            if (newCase.CategoryId == 0 || newCase.ReasonId == 0 || newCase.DetailId == 0 || newCase.ClientId == 0)
+            {
+                return BadRequest("Missing required fields.");
+            }
+
+            try
+            {
+                _context.Cases.Add(newCase);
+                await _context.SaveChangesAsync();
+                return Ok(newCase);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error inserting case: {ex.Message}");
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
+
+
 
 
     }
