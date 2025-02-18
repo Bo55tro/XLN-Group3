@@ -6,31 +6,38 @@ var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ Add Database Context (SQLite)
+// ✅ 1. Add Services BEFORE app.Build()
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite("Data Source=Database/XLN-Database.db"));
 
-// ✅ Enable CORS (for frontend calls)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: MyAllowSpecificOrigins,
         policy =>
         {
-            policy.WithOrigins("https://localhost:44485")
-                  .AllowAnyHeader()
+            policy.WithOrigins("http://localhost:3000", "https://localhost:44485")
                   .AllowAnyMethod()
-                  .AllowCredentials();
+                  .AllowAnyHeader();
         });
 });
 
-// ✅ Add Services
-builder.Services.AddControllersWithViews();
+// ✅ 2. Add Controllers BEFORE app.Build()
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// ✅ 3. Now Build the App
 var app = builder.Build();
 
-// ✅ Enable Swagger in Development Only
+// ✅ 4. Middleware Configuration (AFTER app.Build())
+app.UseCors(MyAllowSpecificOrigins);
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthorization();
+app.MapControllers();
+
+// ✅ 5. Enable Swagger Only in Development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -38,24 +45,8 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    app.UseHsts(); // ✅ Use HSTS for security in production
+    app.UseHsts();
 }
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-
-// ✅ Apply CORS Before Authorization
-app.UseCors(MyAllowSpecificOrigins);
-
-app.UseAuthorization();  // ✅ Ensure authorization middleware is active
-
-// ✅ Define Routes
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller}/{action=Index}/{id?}");
-
-app.MapFallbackToFile("index.html");
-
-// ✅ Run Application
+// ✅ 6. Start the App
 app.Run();
