@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import './Casecreationpage.css';
 
 
@@ -102,8 +102,8 @@ const CaseCreationpage = () => {
                     <label className="createcase-label">CATEGORY</label>
                     <select
                         className="createcase-select"
-                        value={selectedcategory}
-                        onChange={(e) => setSelectedcategory(e.target.value)}
+                        value={selectedCategory}
+                        onChange={(e) => setSelectedCategory(e.target.value)}
                     >
                         <option value="">Select Category</option>
                         {categories.map((cat) => (
@@ -118,9 +118,9 @@ const CaseCreationpage = () => {
                     <label className="createcase-label">REASON</label>
                     <select
                         className="createcase-select"
-                        value={selectedreason}
-                        onChange={(e) => setSelectedreason(e.target.value)}
-                        disabled={!selectedcategory}
+                        value={selectedReason}
+                        onChange={(e) => setSelectedReason(e.target.value)}
+                        disabled={!selectedCategory}
                     >
                         <option value="">Select Reason</option>
                         {reasons.map((reason) => (
@@ -134,9 +134,9 @@ const CaseCreationpage = () => {
                     <label className="createcase-label">DETAIL</label>
                     <select
                         className="createcase-select"
-                        value={selecteddetail}
-                        onChange={(e) => setSelecteddetail(e.target.value)}
-                        disabled={!selectedreason}
+                        value={selectedDetail}
+                        onChange={(e) => setSelectedDetail(e.target.value)}
+                        disabled={!selectedReason}
                     >
                         <option value="">Select Detail</option>
                         {details.map((detail) => (
@@ -159,7 +159,7 @@ const CaseCreationpage = () => {
 
                 <div>
                     <label className="createcase-label">CLIENT</label>
-                    <select className="createcase-select" value={selectedclient} onChange={(e) => setSelectedclient(e.target.value)}>
+                    <select className="createcase-select" value={selectedClient} onChange={(e) => setSelectedClient(e.target.value)}>
                         <option value="">Select Client</option>
                         {clients.map((client) => (
                             <option key={client.clientId} value={client.clientId}>
