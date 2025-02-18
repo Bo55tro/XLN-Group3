@@ -2,21 +2,14 @@
     position: center;
 }
 .createcase-container {
-    width: 450px;
-    max-width: 500px;
+    width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 1.5 rem;
     background-color: #003064;
-    border-radius: 0.5 rem;
+    border-radius: 1 rem;
     text-align: center;
 }
-.createcase-vertical{
-    display:flex;
-    justify-content:center;
-    align-items: center;
-    height:100px;
-}
-
 .createcase-title{
     font-size: 2rem;
     color: #ffffff;
@@ -25,19 +18,18 @@
 }
 
 .createcase-label {
+    display: block;
     color: #ffffff;
+    margin-bottom: 0.5 rem;
 }
-.createcase-spaces {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
+
 
 createcase-select{
     width:100px;
     padding: 0.5rem;
     border: 1px solid #ffffff;
     border-radius: 0.4 rem;
+    margin-bottom: 0.5 rem;
 }
 createcase-text{
     width: 200px;
@@ -53,8 +45,11 @@ createcase-text{
     color: white;
     padding: 0.5 rem;
     border-radius: 0.4 rem;
+    transition: all 0.3s;
     cursor: pointer;
+    margin-top: 1rem;
 }
-.createcase-btn:hover{
-    background-color: #ffffff;
-}
+    .createcase-btn:hover {
+        color: #003064;
+        background-color: #ffffff;
+    }

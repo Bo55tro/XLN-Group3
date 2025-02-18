@@ -59,7 +59,7 @@ const CaseCreationpage = () => {
 
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label className="createcase-label">Category</label>
+                    <label className="createcase-label">CATEGORY</label>
                     <select
                         className="createcase-select"
                         value={selectedcategory}
@@ -75,7 +75,7 @@ const CaseCreationpage = () => {
                 </div>
 
                 <div>
-                    <label className="createcase-label">Reason</label>
+                    <label className="createcase-label">REASON</label>
                     <select
                         className="createcase-select"
                         value={selectedreason}
@@ -91,7 +91,7 @@ const CaseCreationpage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="createcase-label">Detail</label>
+                    <label className="createcase-label">DETAIL</label>
                     <select
                         className="createcase-select"
                         value={selecteddetail}
@@ -107,7 +107,7 @@ const CaseCreationpage = () => {
                     </select>
                 </div>
                 <div>
-                    <label className="createcase-label" >Comments</label>
+                    <label className="createcase-label" >COMMENTS</label>
                     <textarea
                         className="createcase-text"
                         rows="1"
@@ -118,7 +118,7 @@ const CaseCreationpage = () => {
                 </div>
 
                 <div>
-                    <label className="createcase-label">Client</label>
+                    <label className="createcase-label">CLIENT</label>
                     <select className="createcase-select" value={selectedclient} onChange={(e) => setSelectedclient(e.target.value)}>
                         <option value="">Select Client</option>
                         {clients.map((client) => (
@@ -128,7 +128,6 @@ const CaseCreationpage = () => {
                         ))}
                     </select>
                 </div>
-
                 <button type="submit" className="createcase-btn">
                     Create Case
                 </button>
