@@ -1,55 +1,133 @@
-﻿createcase{
-    position: center;
-}
-.createcase-container {
-    width: 500px;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1.5 rem;
-    background-color: #003064;
-    border-radius: 1 rem;
-    text-align: center;
+﻿.createcase-container {
+    max-width: 1400px;
+    width : 100%;
+    margin: 50px auto;
+    padding: 30px;
+    background: #f8f9fa; /* Light grey background */
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .createcase-title{
-    font-size: 2rem;
-    color: #ffffff;
+    font-size: 3rem;
+    color: #003064;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.createcase-subtitle {
+    font-size: 1.5rem;
+    color: #003064;
     font-weight: 400;
     margin-bottom: 1rem;
 }
 
 .createcase-label {
     display: block;
-    color: #ffffff;
+    color: #003064;
     margin-bottom: 0.5 rem;
 }
 
-
-createcase-select{
-    width:100px;
-    padding: 0.5rem;
-    border: 1px solid #ffffff;
-    border-radius: 0.4 rem;
-    margin-bottom: 0.5 rem;
-}
-createcase-text{
-    width: 200px;
-    padding: 0.5rem;
-    border: 1px solid #ffffff;
-    border-radius: 0.4rem;
-    resize: vertical;
+.createcase-dropdown-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 15px;
+    gap: 40px;
 }
 
+/* Each dropdown wrapper */
+.createcase-dropdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%; /* Each dropdown takes 30% width */
+}
+
+.createcase-dropdown-box {
+    width: 300px;
+    height: 30px;
+    border-color: #003064;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Dropdown label */
+.createcase-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Dropdown */
+.createcase-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Comments Section */
+.createcase-comments {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-color: #003064;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Textarea */
+.createcase-text {
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Last row: Client & Submit button */
+.createcase-lastrow {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: auto;
+    margin: auto;
+    margin-left: 170px;
+}
+
+/* Client Dropdown */
+.createcase-client {
+    width: 45%;
+}
+
+/* Submit Button */
 .createcase-btn {
-    width: 100px;
-    background-color: #003064;
+    width: 25%;
+    height: 35px;
+    padding: auto;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 14px;
+    background-color: #007bff;
     color: white;
-    padding: 0.5 rem;
-    border-radius: 0.4 rem;
-    transition: all 0.3s;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
+    transition: 0.3s;
 }
-    .createcase-btn:hover {
-        color: #003064;
-        background-color: #ffffff;
-    }
+
+.createcase-btn:hover {
+    background-color: #0056b3;
+}
