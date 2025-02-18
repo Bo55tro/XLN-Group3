@@ -11,9 +11,9 @@ namespace ReactWithASP.Data
         }
 
         // Add DbSet properties for each table
-        public DbSet<Category> Categories { get; set; }
-        public DbSet<Reason> Reasons { get; set; }
-        public DbSet<Detail> Details { get; set; }
+        public DbSet<Category> Category { get; set; }
+        public DbSet<Reason> Reason { get; set; }
+        public DbSet<Detail> Detail { get; set; }
 
 
     }
