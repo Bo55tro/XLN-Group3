@@ -1,2 +1,60 @@
-﻿body {
+﻿createcase{
+    position: center;
+}
+.createcase-container {
+    width: 450px;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5 rem;
+    background-color: #003064;
+    border-radius: 0.5 rem;
+    text-align: center;
+}
+.createcase-vertical{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    height:100px;
+}
+
+.createcase-title{
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.createcase-label {
+    color: #ffffff;
+}
+.createcase-spaces {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+createcase-select{
+    width:100px;
+    padding: 0.5rem;
+    border: 1px solid #ffffff;
+    border-radius: 0.4 rem;
+}
+createcase-text{
+    width: 200px;
+    padding: 0.5rem;
+    border: 1px solid #ffffff;
+    border-radius: 0.4rem;
+    resize: vertical;
+}
+
+.createcase-btn {
+    width: 100px;
+    background-color: #003064;
+    color: white;
+    padding: 0.5 rem;
+    border-radius: 0.4 rem;
+    cursor: pointer;
+}
+.createcase-btn:hover{
+    background-color: #ffffff;
 }

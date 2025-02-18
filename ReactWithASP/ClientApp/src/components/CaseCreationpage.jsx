@@ -1,4 +1,5 @@
 ﻿import React, { useState, useEffect } from "react";
+import './Casecreationpage.css';
 
 const CaseCreationpage = () => {
     const [categories, setCategories] = useState([]);
@@ -53,15 +54,14 @@ const CaseCreationpage = () => {
     };
 
     return (
-        <div className="max-w-lg mx-auto p-6 bg-blue shadow-lg rounded-lg">
-            <h2 className="text-xl font-bold mb-4">Create Case</h2>
+        <div className = "createcase-container">
+            <h2 className = "createcase-title">CREATE CASE</h2>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-                {/* Category Dropdown */}
+            <form onSubmit={handleSubmit}>
                 <div>
-                    <label className="block text-sm font-medium">Category</label>
+                    <label className="createcase-label">Category</label>
                     <select
-                        className="w-full p-2 border rounded"
+                        className="createcase-select"
                         value={selectedcategory}
                         onChange={(e) => setSelectedcategory(e.target.value)}
                     >
@@ -74,11 +74,10 @@ const CaseCreationpage = () => {
                     </select>
                 </div>
 
-                {/* Reason Dropdown */}
                 <div>
-                    <label className="block text-sm font-medium">Reason</label>
+                    <label className="createcase-label">Reason</label>
                     <select
-                        className="w-full p-2 border rounded"
+                        className="createcase-select"
                         value={selectedreason}
                         onChange={(e) => setSelectedreason(e.target.value)}
                         disabled={!selectedcategory}
@@ -91,12 +90,10 @@ const CaseCreationpage = () => {
                         ))}
                     </select>
                 </div>
-
-                {/* Detail Dropdown */}
                 <div>
-                    <label className="block text-sm font-medium">Detail</label>
+                    <label className="createcase-label">Detail</label>
                     <select
-                        className="w-full p-2 border rounded"
+                        className="createcase-select"
                         value={selecteddetail}
                         onChange={(e) => setSelecteddetail(e.target.value)}
                         disabled={!selectedreason}
@@ -109,27 +106,20 @@ const CaseCreationpage = () => {
                         ))}
                     </select>
                 </div>
-
-                {/* Comments Textbox */}
                 <div>
-                    <label className="block text-sm font-medium">Comments</label>
+                    <label className="createcase-label" >Comments</label>
                     <textarea
-                        className="w-full p-2 border rounded"
-                        rows="3"
+                        className="createcase-text"
+                        rows="1"
                         value={comments}
                         onChange={(e) => setComments(e.target.value)}
                         placeholder="Enter comments..."
                     />
                 </div>
 
-                {/* Clients Dropdown */}
                 <div>
-                    <label className="block text-sm font-medium">Client</label>
-                    <select
-                        className="w-full p-2 border rounded"
-                        value={selectedclient}
-                        onChange={(e) => setSelectedclient(e.target.value)}
-                    >
+                    <label className="createcase-label">Client</label>
+                    <select className="createcase-select" value={selectedclient} onChange={(e) => setSelectedclient(e.target.value)}>
                         <option value="">Select Client</option>
                         {clients.map((client) => (
                             <option key={client.clientId} value={client.clientId}>
@@ -139,15 +129,11 @@ const CaseCreationpage = () => {
                     </select>
                 </div>
 
-                {/* Submit Button */}
-                <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
-                >
+                <button type="submit" className="createcase-btn">
                     Create Case
                 </button>
             </form>
-        </div>
+            </div>
     );
 };
 
