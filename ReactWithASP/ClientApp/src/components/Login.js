@@ -1,7 +1,8 @@
 ﻿import React from 'react';
 import './Login.css';
-import companyLogo from '../images/daisy-logo.jpg'; // Adjust the path as necessary
-import backgroundImg from '../images/LoginPageLeft.jpg'; // Adjust the path as necessary
+import companyLogo from '../Images/daisy-logo.jpg'; // Adjust the path as necessary
+import backgroundImg from '../Images/LoginPageLeft.jpg'; // Adjust the path as necessary
+
 
 const Login = () => {
     return (
@@ -37,7 +38,7 @@ const Login = () => {
                         {/* Links for Forgot Password and Create Account */}
                         <div className="links">
                             <a href="/forgot-password">Forgot password?</a>
-                            <a href="#">Create Account</a>
+                            <a href="/forgot-password">Create Account</a>
                         </div>
 
                         {/* Submit Button */}

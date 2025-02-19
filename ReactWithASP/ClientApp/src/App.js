@@ -1,10 +1,12 @@
-<<<<<<< Updated upstream
 import React, { Component } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import AppRoutes from './AppRoutes'; // Your routes configuration
 import { Layout } from './components/Layout';
 import CaseCreationpage from './components/CaseCreationpage'; // Import the CaseCreationpage component
 import './custom.css';
+import Login from './components/Login'; // Import the Login component
+import Dashboard from './components/Dashboard'; // Import the Dashboard component
+import ForgotPassword from './components/ForgotPassword'; // Import the ForgotPassword component
 
 export default class App extends Component {
     static displayName = App.name;
@@ -26,35 +28,18 @@ export default class App extends Component {
                         const { element, ...rest } = route;
                         return <Route key={index} {...rest} element={element} />;
                     })}
+                    {/* Define route for Login */}
+                    <Route path="/login" element={<Login />} />
+
+                    {/* Define route for Dashboard */}
+                    <Route path="/dashboard" element={<Dashboard />} />
+
+                    <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Correct usage of element */}
+
+                    {/* Default route - Redirect to Login */}
+                    <Route path="/" element={<Navigate to="/login" />} />
                 </Routes>
             </Layout>
         );
     }
 }
-=======
-import { Routes, Route, Navigate } from 'react-router-dom';
-import Login from './components/Login';
-import Dashboard from './components/Dashboard';
-import ForgotPassword from './components/ForgotPassword';
-
-const App = () => {
-    return (
-        <Routes>
-            {/* Define route for Login */}
-            <Route path="/login" element={<Login />} />
-
-            {/* Define route for Dashboard */}
-            <Route path="/dashboard" element={<Dashboard />} />
-
-            <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Correct usage of element */}
-
-            {/* Default route - Redirect to Login */}
-            <Route path="/" element={<Navigate to="/login" />} />
-        </Routes>
-    );
-};
-
-export default App;
-
-
->>>>>>> Stashed changes
