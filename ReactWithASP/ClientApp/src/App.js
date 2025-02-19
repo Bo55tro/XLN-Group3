@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes'; // Your routes configuration
@@ -30,3 +31,30 @@ export default class App extends Component {
         );
     }
 }
+=======
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import ForgotPassword from './components/ForgotPassword';
+
+const App = () => {
+    return (
+        <Routes>
+            {/* Define route for Login */}
+            <Route path="/login" element={<Login />} />
+
+            {/* Define route for Dashboard */}
+            <Route path="/dashboard" element={<Dashboard />} />
+
+            <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Correct usage of element */}
+
+            {/* Default route - Redirect to Login */}
+            <Route path="/" element={<Navigate to="/login" />} />
+        </Routes>
+    );
+};
+
+export default App;
+
+
+>>>>>>> Stashed changes

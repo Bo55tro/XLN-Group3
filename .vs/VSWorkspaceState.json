@@ -1,9 +1,14 @@
 {
   "ExpandedNodes": [
+<<<<<<< Updated upstream
     "",
     "\\ReactWithASP",
     "\\ReactWithASP\\ClientApp"
   ],
   "SelectedNode": "\\ReactWithASP\\ClientApp",
+=======
+    ""
+  ],
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }
