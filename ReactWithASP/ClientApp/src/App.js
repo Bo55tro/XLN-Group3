@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import AppRoutes from './AppRoutes'; // Your routes configuration
 import { Layout } from './components/Layout';
 import CaseCreationpage from './components/CaseCreationpage'; // Import the CaseCreationpage component
@@ -7,6 +7,7 @@ import './custom.css';
 import Login from './components/Login'; // Import the Login component
 import Dashboard from './components/Dashboard'; // Import the Dashboard component
 import ForgotPassword from './components/ForgotPassword'; // Import the ForgotPassword component
+import Home from './components/Home'; // Import the Home component
 
 export default class App extends Component {
     static displayName = App.name;
@@ -37,7 +38,7 @@ export default class App extends Component {
                     <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Correct usage of element */}
 
                     {/* Default route - Redirect to Login */}
-                    <Route path="/" element={<Navigate to="/login" />} />
+                    <Route path="/" element={<Home/>} />
                 </Routes>
             </Layout>
         );
