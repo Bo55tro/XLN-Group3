@@ -98,13 +98,13 @@ namespace ReactWithASP.Controllers {
 
                 int commonWords = existingKeywords.Intersect(newKeywords).Count();
 
-                if (commonWords >= 4) // Checking for duplicate cases
+                if (commonWords >= 3) // Checking for duplicate cases
                 {
                     return Conflict(new { message = "Potential duplicate case found.", existingCase });
                 }
             }
 
-            
+
             using (var transaction = await _context.Database.BeginTransactionAsync()) {
                 try
                 {
