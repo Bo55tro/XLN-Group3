@@ -1,3 +1,7 @@
+using System;
+using System.ComponentModel.DataAnnotations;
+
+
 namespace ReactWithASP.Models
 {
     public class Case
@@ -13,6 +17,7 @@ namespace ReactWithASP.Models
         public int ReasonId { get; set; }
         public int DetailId { get; set; }
         public string caseComments { get; set; }
+        public string? caseKeyWords { get; set; }
         public string caseStatus { get; set; }
         public string caseNotes { get; set; }
         public int ClientId { get; set; }

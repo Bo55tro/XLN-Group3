@@ -94,10 +94,11 @@ const CaseCreationpage = () => {
             alert("Please select all fields before submitting.");
             return;
         }
-
+    
         const today = new Date();
-        const formattedDate = today.toISOString().split("T")[0];
-        
+        const formattedDate = today.toISOString().substring(0, 10); // Extracts YYYY-MM-DD
+
+    
         const caseData = {
             categoryId: parseInt(selectedCategory),
             reasonId: parseInt(selectedReason),
@@ -109,7 +110,7 @@ const CaseCreationpage = () => {
             caseStatus: "Open",
             agentId: 1 // Hardcoded for now
         };
-
+    
         console.log("Submitting case:", JSON.stringify(caseData, null, 2));
     
         try {
@@ -124,6 +125,16 @@ const CaseCreationpage = () => {
     
             if (!response.ok) {
                 const errorText = await response.text();
+                console.error("Server Response:", errorText);
+    
+                if (response.status === 400) {
+                    alert("Validation Error: " + JSON.parse(errorText).message);
+                } else if (response.status === 409) {
+                    alert("Duplicate Case Found! Check similar cases.");
+                } else {
+                    alert("Unexpected Error. Check console for details.");
+                }
+    
                 throw new Error(`HTTP error! Status: ${response.status}, Message: ${errorText}`);
             }
     
@@ -143,6 +154,7 @@ const CaseCreationpage = () => {
             alert("Failed to create case. Check console for details.");
         }
     };
+    
     
     
 
@@ -233,9 +245,8 @@ const CaseCreationpage = () => {
                             Create Case
                         </button>
                 </div>
-                
             </form>
-            </div>
+        </div>
     );
 };
 

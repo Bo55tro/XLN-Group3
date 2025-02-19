@@ -10,7 +10,7 @@ namespace ReactWithASP.Data {
         {
         }
 
-        public DbSet<Category> Categories { get; set; } // ✅ Use plural naming
+        public DbSet<Category> Categories { get; set; }
         public DbSet<Reason> Reasons { get; set; }
         public DbSet<Detail> Details { get; set; }
         public DbSet<Client> Clients { get; set; }
@@ -24,7 +24,15 @@ namespace ReactWithASP.Data {
             modelBuilder.Entity<Reason>().ToTable("Reason");
             modelBuilder.Entity<Detail>().ToTable("Detail");
             modelBuilder.Entity<Client>().ToTable("Client");
-            modelBuilder.Entity<Case>().ToTable("Cases"); // ✅ Ensure table names match
+            modelBuilder.Entity<Case>().ToTable("Cases");
         }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("Data Source=Database/XLN-Database.db")
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking) // Prevents locks on queries
+                .EnableSensitiveDataLogging();  // Useful for debugging
+        }
+
     }
 }
