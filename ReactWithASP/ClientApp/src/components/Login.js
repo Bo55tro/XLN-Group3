@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import './Login.css';
 import companyLogo from '../Images/daisy-logo.jpg'; // Adjust the path as necessary
 import backgroundImg from '../Images/LoginPageLeft.jpg'; // Adjust the path as necessary

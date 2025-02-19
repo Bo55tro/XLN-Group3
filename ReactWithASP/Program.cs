@@ -31,13 +31,11 @@ var app = builder.Build();
 
 // ✅ 4. Middleware Configuration (AFTER app.Build())
 app.UseCors(MyAllowSpecificOrigins);
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
-
 
 // ✅ 5. Enable Swagger Only in Development
 if (app.Environment.IsDevelopment())
@@ -52,6 +50,3 @@ else
 
 // ✅ 6. Start the App
 app.Run();
-
-
-
