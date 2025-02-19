@@ -1,11 +1,4 @@
-﻿/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
+﻿.login-body {
     font-family: Arial, sans-serif;
     height: 100%;
     display: flex;
@@ -15,23 +8,23 @@ body {
 }
 
 /* Container to hold the two sections (left and right) */
-.container {
+.login-container {
     display: flex;
     width: 100%;
     height: 100vh;
 }
 
 /* Left side: Background image only */
-.left-side {
+.login-left-side {
     flex: 1;
     background-image: url('../Images/LoginPageLeft.jpg'); /* Path to your background image */
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 85vh;
 }
 
 /* Right side: Form */
-.right-side {
+.login-right-side {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -53,16 +46,16 @@ body {
 }
 
 /* Logo styling */
-.logo img {
+.login-logo img {
     width: 50px; /* Adjust size */
     height: auto; /* Adjust size */
     margin-bottom: 20px;
 }
 
 /* Header: My Account - Login */
-.header {
+.login-header {
     font-size: 24px;
-    color: #0066cc;
+    color: #003064;
     background-color: #f4f7f9;
     padding: 10px;
     margin-bottom: 30px;
@@ -70,7 +63,7 @@ body {
 }
 
 /* Form styling */
-.input-field {
+.login-input-field {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -80,9 +73,9 @@ body {
 }
 
 /* Button styling */
-.submit-btn {
+.login-submit-btn {
     width: 100%;
-    background-color: #0066cc;
+    background-color: #003064;
     color: white;
     padding: 12px;
     border: none;
@@ -91,24 +84,24 @@ body {
     margin-top: 20px;
 }
 
-    .submit-btn:hover {
-        background-color: #004d99;
-    }
+.login-submit-btn:hover {
+    background-color: #011934;
+}
 
 /* Links (Forgot password, Create Account) */
-.links {
+.login-links {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-bottom: 20px;
 }
 
-    .links a {
-        color: #0066cc;
-        text-decoration: none;
-        font-size: 14px;
-    }
+.login-links a {
+color: #003064;
+text-decoration: none;
+font-size: 14px;
+}
 
-        .links a:hover {
-            text-decoration: underline;
-        }
+.login-links a:hover {
+text-decoration: underline;
+}

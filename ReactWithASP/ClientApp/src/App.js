@@ -7,7 +7,7 @@ import './custom.css';
 import Login from './components/Login'; // Import the Login component
 import Dashboard from './components/Dashboard'; // Import the Dashboard component
 import ForgotPassword from './components/ForgotPassword'; // Import the ForgotPassword component
-import Home from './components/Home'; // Import the Home component
+import { Home } from './components/Home'; // Import the Home component
 
 export default class App extends Component {
     static displayName = App.name;
