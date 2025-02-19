@@ -1,65 +1,65 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\",
+  "WorkspaceRootPath": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\controllers\\forgotpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\controllers\\forgotpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\clientapp\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\clientapp\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\clientapp\\src\\components\\forgotpassword.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\components\\forgotpassword.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\xln-database.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\xln-database.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\clientapp\\src\\components\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\components\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\clientapp\\src\\components\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\components\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\clientapp\\src\\serviceworkerregistration.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\serviceworkerregistration.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\clientapp\\src\\components\\dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\clientapp\\src\\components\\dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\components\\dashboard.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\clientapp\\src\\components\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\components\\login.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\source\\repos\\xln-group3\\reactwithasp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\clientapp\\src\\components\\forgotpassword.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\components\\forgotpassword.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\controllers\\forgotpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\controllers\\forgotpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\xln-database.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\xln-database.db||{25834150-CD7E-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\clientapp\\src\\components\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\components\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\clientapp\\src\\serviceworkerregistration.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\clientapp\\src\\serviceworkerregistration.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|c:\\users\\lapto\\onedrive\\documents\\github\\xln-group3\\reactwithasp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3CFE6157-B73F-40DD-9D86-C08C683B70BD}|ReactWithASP\\ReactWithASP.csproj|solutionrelative:reactwithasp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
@@ -70,130 +70,171 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ForgotPassword.js",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
-              "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
-              "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Login.js",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.js",
+              "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\components\\Login.js",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.js",
+              "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\components\\Login.js",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-18T14:50:35.255Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ForgotPasswordController.cs",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Controllers\\ForgotPasswordController.cs",
-              "RelativeDocumentMoniker": "ReactWithASP\\Controllers\\ForgotPasswordController.cs",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Controllers\\ForgotPasswordController.cs",
-              "RelativeToolTip": "ReactWithASP\\Controllers\\ForgotPasswordController.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAmwEYAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T14:48:46.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T13:51:07.225Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\appsettings.json",
-              "RelativeDocumentMoniker": "ReactWithASP\\appsettings.json",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\appsettings.json",
-              "RelativeToolTip": "ReactWithASP\\appsettings.json",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAgAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-02-17T11:09:45.119Z",
-              "EditorCaption": ""
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Program.cs",
+              "RelativeDocumentMoniker": "ReactWithASP\\Program.cs",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Program.cs",
+              "RelativeToolTip": "ReactWithASP\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T15:50:09.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "ReactWithASP\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "ReactWithASP\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T13:49:03.507Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Models\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "ReactWithASP\\Models\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Models\\ApplicationDbContext.cs",
+              "RelativeToolTip": "ReactWithASP\\Models\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-17T11:13:48.283Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Program.cs",
-              "RelativeDocumentMoniker": "ReactWithASP\\Program.cs",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Program.cs",
-              "RelativeToolTip": "ReactWithASP\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "ReactWithASP\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Models\\LoginModel.cs",
+              "RelativeToolTip": "ReactWithASP\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-10T15:50:09.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-17T13:47:30.092Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "Dashboard.js",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
+              "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
+              "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-17T15:20:27.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "App.js",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\App.js",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\App.js",
               "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\App.js",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\App.js",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\App.js",
               "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\App.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAATAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-02-17T13:56:54.198Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Models\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "ReactWithASP\\Models\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Models\\ApplicationDbContext.cs",
-              "RelativeToolTip": "ReactWithASP\\Models\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T11:13:48.283Z",
-              "EditorCaption": ""
+              "DocumentIndex": 7,
+              "Title": "ForgotPassword.js",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
+              "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
+              "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\components\\ForgotPassword.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-02-18T14:50:35.255Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\appsettings.json",
+              "RelativeDocumentMoniker": "ReactWithASP\\appsettings.json",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\appsettings.json",
+              "RelativeToolTip": "ReactWithASP\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-17T11:09:45.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ForgotPasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Controllers\\ForgotPasswordController.cs",
+              "RelativeDocumentMoniker": "ReactWithASP\\Controllers\\ForgotPasswordController.cs",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Controllers\\ForgotPasswordController.cs",
+              "RelativeToolTip": "ReactWithASP\\Controllers\\ForgotPasswordController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-18T14:48:46.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "XLN-Database.db",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\XLN-Database.db",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\XLN-Database.db",
               "RelativeDocumentMoniker": "ReactWithASP\\XLN-Database.db",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\XLN-Database.db",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\XLN-Database.db",
               "RelativeToolTip": "ReactWithASP\\XLN-Database.db",
               "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJLSURBVEhLvZVfSBRBHMe/979Lgo0eOrUH00uus8IkIY1Q8SWjkHroMRQfhUjuNuugIgwvWfrzENFD4IPP1UsIQXGPBdF/wqILr0zqKbzb8v7s7kyze9M/2z\u002BtYh8YZn4zv9nP7uwMg1WFUurhTYNTo\u002BIs623goQOenEpwSJKkZ7zDlCWCJD03Ns4je86eTiEcDi/I30o9dhIvr5fFwOCQsK5mTUYUxVbe9RcrEkRq6xwlKxLoOEn8vLZEUTVkHj4F0Qh697Qh4K9OEQTB\u002BA\u002B/Ifi9yLB6fTWsYilYLJWRm/sEQilKxRIIIcjOfsSXhTxaW5oxkjjBM3/BhAJv/sRyiZ7PZJF9P49sbo59hQqVlZev3\u002BLD/Gc8fjHDs5yxFMSjDfCyTayyJerr3o2\u002Bng5DopftsSjPcsZSwA4himxpNPZAva0X/eE\u002BNoNQwrOcsRS8evOOv7GCW9P3cfPOPUO2WCziwSPbw/sHlgL9R9Zt3IBtsSZDomoKYlsaEW9uQldnO89yxlJQszaMro5d2BptZMvihZ\u002BVth1xdLbvxLXJKaQvX\u002BWZ9jieg2AwgKNH\u002Bo327em7bHmeQJZlqEoFw4lR9HbvxeGDB4xxMyy/wIxQKIRCoYDzKRHpMynk83lQdgDtcCXQKgqUSpntKGIUpVw2NoIdrgSEagj4fDiWPInh40kE/T58lQt81BxXgv79\u002B3D9ioT62gg21UcwNXkDQ4MDfNQcV4IfSONjuDRxgUf2LEvghlUXLLmTE\u002BzS9/zjpW8GzaUnLm7mwf8A\u002BA6x2OMj3Fc96AAAAABJRU5ErkJggg==",
               "WhenOpened": "2025-02-18T14:43:49.461Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Services\\EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Services\\EmailService.cs",
               "RelativeDocumentMoniker": "ReactWithASP\\Services\\EmailService.cs",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Services\\EmailService.cs",
               "RelativeToolTip": "ReactWithASP\\Services\\EmailService.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAQwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-18T15:06:16.847Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T15:06:16.847Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "Login.css",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.css",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.css",
               "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\components\\Login.css",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.css",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.css",
               "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\components\\Login.css",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAGgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-02-18T10:15:04.899Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-18T10:15:04.899Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "serviceWorkerRegistration.js",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\serviceWorkerRegistration.js",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\serviceWorkerRegistration.js",
               "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\serviceWorkerRegistration.js",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\serviceWorkerRegistration.js",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\serviceWorkerRegistration.js",
               "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\serviceWorkerRegistration.js",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
@@ -201,60 +242,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Login.js",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.js",
-              "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\components\\Login.js",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Login.js",
-              "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\components\\Login.js",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-17T13:51:07.225Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "ReactWithASP\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "ReactWithASP\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA1wBgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T13:49:03.507Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "LoginModel.cs",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Models\\LoginModel.cs",
-              "RelativeDocumentMoniker": "ReactWithASP\\Models\\LoginModel.cs",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Models\\LoginModel.cs",
-              "RelativeToolTip": "ReactWithASP\\Models\\LoginModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T13:47:30.092Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Dashboard.js",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
-              "RelativeDocumentMoniker": "ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
-              "RelativeToolTip": "ReactWithASP\\ClientApp\\src\\components\\Dashboard.js",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAowAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-02-17T15:20:27.333Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 14,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "ReactWithASP\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\Lapto\\source\\repos\\XLN-Group3\\ReactWithASP\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\Lapto\\OneDrive\\Documents\\GitHub\\XLN-Group3\\ReactWithASP\\Properties\\launchSettings.json",
               "RelativeToolTip": "ReactWithASP\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
