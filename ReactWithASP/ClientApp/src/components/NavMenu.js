@@ -1,25 +1,33 @@
 import React, { Component } from 'react';
 import { Collapse, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './NavMenu.css';
 import logo from '../Images/Daisy-logo.png';
 
 export class NavMenu extends Component {
   static displayName = NavMenu.name;
 
-  constructor (props) {
+  constructor(props) {
     super(props);
-
     this.toggleNavbar = this.toggleNavbar.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
+    
     this.state = {
-      collapsed: true
+      collapsed: true,
+      isAuthenticated: localStorage.getItem('isAuthenticated') === 'true' // Replace with real auth logic
     };
   }
 
-  toggleNavbar () {
+  toggleNavbar() {
     this.setState({
       collapsed: !this.state.collapsed
     });
+  }
+
+  handleLogout() {
+    localStorage.removeItem('isAuthenticated'); // Clear auth state
+    this.setState({ isAuthenticated: false });
+    window.location.href = '/login'; // Redirect to login
   }
 
   render() {
@@ -36,11 +44,15 @@ export class NavMenu extends Component {
                 <NavLink tag={Link} className="btn navbar-btn" to="/">Home</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="btn navbar-btn" to="/create-case">Create a Case</NavLink>
+                <NavLink tag={Link} className="btn navbar-btn" to="/create-case">Open a Case</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink tag={Link} className="btn navbar-btn" to="/login">Login</NavLink>
-              </NavItem>
+
+              {/* Show Logout Button Only When Logged In */}
+              {this.state.isAuthenticated && (
+                <NavItem>
+                  <button className="btn logout-btn" onClick={this.handleLogout}>Logout</button>
+                </NavItem>
+              )}
             </ul>
           </Collapse>
         </Navbar>
@@ -48,3 +60,5 @@ export class NavMenu extends Component {
     );
   }
 }
+
+export default NavMenu;

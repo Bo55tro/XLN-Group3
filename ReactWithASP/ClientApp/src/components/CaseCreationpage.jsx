@@ -160,7 +160,7 @@ const CaseCreationpage = () => {
 
     return (
         <div className = "createcase-container">
-            <h2 className = "createcase-title">Create a Case</h2>
+            <h2 className = "createcase-title">Open a Case</h2>
             <h4 className = "createcase-subtitle">Please fill out the information below</h4>
 
             <form onSubmit={handleSubmit}>

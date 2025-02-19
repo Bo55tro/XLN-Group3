@@ -27,11 +27,3 @@ public class LoginController : ControllerBase
         return Ok(new { message = "Login successful." });
     }
 }
-
-public class LoginRequest
-{
-    public string agentUsername { get; set; }
-    public string agentPassword { get; set; }
-}
-
-

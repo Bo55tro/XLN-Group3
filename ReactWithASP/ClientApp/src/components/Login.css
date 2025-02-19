@@ -20,7 +20,7 @@
     background-image: url('../Images/LoginPageLeft.jpg'); /* Path to your background image */
     background-size: cover;
     background-position: center;
-    height: 85vh;
+    height: 100vh;
 }
 
 /* Right side: Form */

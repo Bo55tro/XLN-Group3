@@ -1,41 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import companyLogo from '../Images/daisy-logo.jpg';
 
+const Login = ({ onLogin }) => {
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
 
-const Login = () => {
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        if (username === 'admin' && password === 'password') {
+            onLogin(); // Calls login function from `App.js`
+            navigate('/home'); // Redirect to Home
+        } else {
+            alert('Invalid username or password');
+        }
+    };
+
     return (
-        <body className="login-body">
+        <div className="login-body"> {/* Changed from <body> to <div> */}
             <div className="login-container">
+                {/* Left Side */}
                 <div className="login-left-side"></div>
 
                 {/* Right Side (Login Form and Logo) */}
                 <div className="login-right-side">
                     <div className="login-box">
-                        {/* Logo at the top of the right side */}
+                        {/* Logo */}
                         <div className="login-logo">
                             <img src={companyLogo} alt="Company Logo" />
                         </div>
-                        {/* Header: My Account - Login */}
+
+                        {/* Header */}
                         <div className="login-header">My Account – Login</div>
 
-                        <form>
+                        {/* Login Form */}
+                        <form onSubmit={handleLogin}>
                             {/* Username Input */}
                             <div className="form-group">
                                 <label htmlFor="username">Username</label>
-                                <input type="text" id="username" name="username" className="login-input-field" required />
+                                <input 
+                                    type="text" 
+                                    id="username" 
+                                    name="username" 
+                                    className="login-input-field" 
+                                    value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                    required 
+                                />
                             </div>
 
                             {/* Password Input */}
                             <div className="form-group">
                                 <label htmlFor="password">Password</label>
-                                <input type="password" id="password" name="password" className="login-input-field" required />
+                                <input 
+                                    type="password" 
+                                    id="password" 
+                                    name="password" 
+                                    className="login-input-field" 
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                    required 
+                                />
                             </div>
 
-                            {/* Links for Forgot Password and Create Account */}
+                            {/* Links */}
                             <div className="login-links">
                                 <a href="/forgot-password">Forgot password?</a>
-                                <a href="/forgot-password">Create Account</a>
                             </div>
 
                             {/* Submit Button */}
@@ -44,11 +77,8 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-        </body>
+        </div>
     );
 };
 
 export default Login;
-
-
-
