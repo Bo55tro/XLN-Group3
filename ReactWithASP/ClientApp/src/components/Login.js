@@ -6,21 +6,39 @@ import companyLogo from '../Images/daisy-logo.jpg';
 const Login = ({ onLogin }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        if (username === 'admin' && password === 'password') {
-            onLogin(); // Calls login function from `App.js`
-            navigate('/home'); // Redirect to Home
-        } else {
-            alert('Invalid username or password');
+        // Create the login data payload
+        const loginData = { username, password, rememberMe: false };
+
+        try {
+            // Call the backend login API endpoint
+            const response = await fetch('/api/Login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(loginData)
+            });
+
+            if (!response.ok) {
+                throw new Error("Invalid credentials");
+            }
+
+            // If login is successful, trigger the onLogin callback and navigate to the Home page.
+            onLogin();
+            navigate('/home');
+        } catch (err) {
+            setError(err.message);
         }
     };
 
     return (
-        <div className="login-body"> {/* Changed from <body> to <div> */}
+        <div className="login-body">
             <div className="login-container">
                 {/* Left Side */}
                 <div className="login-left-side"></div>
@@ -70,6 +88,9 @@ const Login = ({ onLogin }) => {
                             <div className="login-links">
                                 <a href="/forgot-password">Forgot password?</a>
                             </div>
+
+                            {/* Error Message */}
+                            {error && <div className="error-message">{error}</div>}
 
                             {/* Submit Button */}
                             <button type="submit" className="login-submit-btn">Sign In</button>
