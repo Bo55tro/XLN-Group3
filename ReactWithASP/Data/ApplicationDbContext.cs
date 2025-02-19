@@ -10,6 +10,7 @@ namespace ReactWithASP.Data {
         {
         }
 
+        public DbSet<Category> Agents { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Reason> Reasons { get; set; }
         public DbSet<Detail> Details { get; set; }
@@ -20,6 +21,7 @@ namespace ReactWithASP.Data {
         {
             base.OnModelCreating(modelBuilder);
             
+            modelBuilder.Entity<Agents>().ToTable("Agent");
             modelBuilder.Entity<Category>().ToTable("Category");
             modelBuilder.Entity<Reason>().ToTable("Reason");
             modelBuilder.Entity<Detail>().ToTable("Detail");

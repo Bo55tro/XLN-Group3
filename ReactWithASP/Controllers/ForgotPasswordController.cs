@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Mail;
 using System.Threading.Tasks;
-using ReactWithASP;
+using ReactWithASP.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace ReactWithASP.Controllers
