@@ -1,22 +1,28 @@
-import React, { Component } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import AppRoutes from './AppRoutes';
-import { Layout } from './components/Layout';
-import './custom.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
+import ForgotPassword from './components/ForgotPassword';
+import CreateAccount from './components/CreateAccount';
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render() {
+const App = () => {
     return (
-      <Layout>
         <Routes>
-          {AppRoutes.map((route, index) => {
-            const { element, ...rest } = route;
-            return <Route key={index} {...rest} element={element} />;
-          })}
+            {/* Define route for Login */}
+            <Route path="/login" element={<Login />} />
+
+            {/* Define route for Dashboard */}
+            <Route path="/dashboard" element={<Dashboard />} />
+
+            <Route path="/forgot-password" element={<ForgotPassword />} /> {/* Correct usage of element */}
+
+            <Route path="/create-account" element={<CreateAccount />} />
+
+            {/* Default route - Redirect to Login */}
+            <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
-      </Layout>
     );
-  }
-}
+};
+
+export default App;
+
+
