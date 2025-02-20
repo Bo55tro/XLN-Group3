@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styles from "./Home.module.css";
+
+
 const CategoryDetailsPage = () => {
     const { categoryId } = useParams();
     const [ category, setCategory ] = useState(null);
