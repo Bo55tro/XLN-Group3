@@ -8,60 +8,45 @@ using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace ReactWithASP.Controllers
+[Route("api/login")]
+[ApiController]
+public class LoginController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class LoginController : Controller
+    private readonly ApplicationDbContext _context;
+
+    public LoginController(ApplicationDbContext context)
     {
-        private readonly ApplicationDbContext _context;
+        _context = context;
+    }
 
-        public LoginController(ApplicationDbContext context)
+    [HttpPost] 
+    public async Task<IActionResult> Login([FromBody] LoginModel request)
+    {
+        // Check if agent exists with matching username and password
+        var agent = await _context.Agents
+            .FirstOrDefaultAsync(a => a.agentUsername == request.agentUsername);
+
+        if (agent == null || agent.agentPassword != request.agentPassword)
         {
-            _context = context;
+            return Unauthorized(new { message = "Invalid username or password." });
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Login([FromBody] LoginRequest request)
+        // ✅ Fix: Implement authentication using Cookies (Session-based login)
+        var claims = new List<Claim>
         {
-            if (request == null ||
-                string.IsNullOrWhiteSpace(request.Username) ||
-                string.IsNullOrWhiteSpace(request.Password))
-            {
-                return BadRequest("Invalid login request.");
-            }
+            new Claim(ClaimTypes.Name, agent.agentUsername),
+            new Claim("AgentId", agent.agentId.ToString())  // Store user ID as claim
+        };
 
-            // Look up the agent using the provided username.
-            var agent = await _context.Agents.FirstOrDefaultAsync(a => a.agentUsername == request.Username);
+        var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+        var authProperties = new AuthenticationProperties
+        {
+            IsPersistent = true // Keep user logged in (change as needed)
+        };
 
-            // Check if the agent exists and the provided password matches.
-            // (Note: For security reasons, consider storing hashed passwords and comparing hashes.)
-            if (agent == null || agent.agentPassword != request.Password)
-            {
-                return Unauthorized("Invalid credentials.");
-            }
+        await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+            new ClaimsPrincipal(claimsIdentity), authProperties);
 
-            // Create claims for the user (you can add more claims as needed).
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, request.Username)
-            };
-
-            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-
-            // Create authentication properties (e.g., persistent cookie if "Remember Me" is checked)
-            var authProperties = new AuthenticationProperties
-            {
-                IsPersistent = request.RememberMe
-            };
-
-            // Sign in the user and issue the authentication cookie.
-            await HttpContext.SignInAsync(
-                CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                authProperties);
-
-            return Ok(new { success = true, message = "Logged in successfully" });
-        }
+        return Ok(new { message = "Login successful" });
     }
 }

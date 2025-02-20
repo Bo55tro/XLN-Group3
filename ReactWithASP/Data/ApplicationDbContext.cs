@@ -17,11 +17,19 @@ namespace ReactWithASP.Data {
         public DbSet<Client> Clients { get; set; }
         public DbSet<Case> Cases { get; set; }
 
+        public class Agent  
+        {
+            public int agentId { get; set; }
+            public string agentName { get; set; }
+            public string agentUsername { get; set; }
+            public string agentPassword { get; set; }
+        }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             
-            modelBuilder.Entity<Agent>().ToTable("Agent");
             modelBuilder.Entity<Category>().ToTable("Category");
             modelBuilder.Entity<Reason>().ToTable("Reason");
             modelBuilder.Entity<Detail>().ToTable("Detail");

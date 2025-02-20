@@ -1,39 +1,39 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './Login.css';
-import companyLogo from '../Images/daisy-logo.jpg';
+import companyLogo from '../Images/daisy-logo.jpg'; 
 
-const Login = ({ onLogin }) => {
+const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        // Create the login data payload
-        const loginData = { username, password, rememberMe: false };
+        const loginData = {
+            agentUsername: username,
+            agentPassword: password,
+        };
 
         try {
-            // Call the backend login API endpoint
-            const response = await fetch('/api/Login', {
+            const response = await fetch('https://localhost:5001/api/login', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(loginData)
+                body: JSON.stringify(loginData),
             });
 
-            if (!response.ok) {
-                throw new Error("Invalid credentials");
-            }
+            const result = await response.json();
 
-            // If login is successful, trigger the onLogin callback and navigate to the Home page.
-            onLogin();
-            navigate('/home');
+            // If login is successful, redirect to the dashboard
+            if (response.ok) {
+                window.location.href = '/home'; // Replace with the path to your dashboard page
+            } else {
+                setError(result.message || 'Invalid username or password');
+            }
         } catch (err) {
-            setError(err.message);
+            setError('Something went wrong, please try again later.');
         }
     };
 

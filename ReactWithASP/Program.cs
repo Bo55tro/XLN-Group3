@@ -2,65 +2,78 @@ using ReactWithASP.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
-
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ 1. Add Services BEFORE app.Build()
-
-// Database Context
+// Database Context Configuration
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite("Data Source=Database/XLN-Database.db"));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// CORS Policy
+// Add Controllers and Views
+builder.Services.AddControllersWithViews();
+
+// Enable Application Insights for logging
+builder.Services.AddApplicationInsightsTelemetry();
+
+// CORS Policy (Ensures Frontend Access)
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
-        policy =>
-        {
-            policy.WithOrigins("http://localhost:3000", "https://localhost:44485")
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        });
+    options.AddPolicy(name: MyAllowSpecificOrigins, policy =>
+    {
+        policy.WithOrigins("http://localhost:3000", "https://localhost:44485")
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
 });
 
-// Controllers, Swagger, and Endpoints
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Register Email Service
+builder.Services.AddSingleton<EmailService>();
 
-// ✅ 2. Add Authentication BEFORE calling builder.Build()
+// Authentication Configuration (Cookie-based authentication)
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
-        options.LoginPath = "/login"; // Adjust as needed.
+        options.LoginPath = "/login"; // Ensure this matches the React login page route
     });
 
-// ✅ 3. Build the App
+// Swagger Configuration (API Documentation for Development)
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// Build the App
 var app = builder.Build();
 
-// ✅ 4. Middleware Configuration AFTER app.Build()
-app.UseCors(MyAllowSpecificOrigins);
-app.UseHttpsRedirection();
-app.UseStaticFiles();
-app.UseRouting();
-
-// Add Authentication Middleware
-app.UseAuthentication();
-
-app.UseAuthorization();
-app.MapControllers();
-
-// ✅ 5. Enable Swagger Only in Development
+// Middleware Configuration AFTER app.Build()
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 else
 {
+    app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
 
-// ✅ 6. Start the App
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+
+// Enable CORS for frontend communication
+app.UseCors(MyAllowSpecificOrigins);
+
+// Add Authentication Middleware
+app.UseAuthentication();
+app.UseAuthorization();
+
+// Define Default Route for Controllers
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// Serve React App (Ensure this line is here for frontend routing)
+app.MapFallbackToFile("index.html");
+
+// Start the app
 app.Run();
