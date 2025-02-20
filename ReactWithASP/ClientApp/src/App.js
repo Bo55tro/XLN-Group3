@@ -7,21 +7,22 @@ import './custom.css';
 import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword';
 import { Home } from './components/Home';
+import { CategoriesGrid } from "./components/Home";
+import CategoryDetailsPage from './components/CategoryDetailsPage';
+
 
 function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(true); // ✅ Temporary fix: Always true
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Check if user is already logged in (stored in localStorage)
-        const authStatus = localStorage.getItem('isAuthenticated') === 'true';
-        setIsAuthenticated(authStatus);
+        // ✅ Temporary fix: Always treat user as logged in
+        setIsAuthenticated(true);
     }, []);
 
-    const handleLogin = () => {
-        setIsAuthenticated(true);
-        localStorage.setItem('isAuthenticated', 'true');
-        navigate('/home'); // Redirect to home after login
+    const handleLogin = (e) => {
+        e.preventDefault();
+        window.location.href = "/home"; // Redirect directly to home
     };
 
     const handleLogout = () => {
@@ -29,45 +30,28 @@ function App() {
         localStorage.removeItem('isAuthenticated');
         navigate('/login'); // Redirect to login after logout
     };
-
-    // Routes configuration with authentication protection
-    const appRoutesWithCreateCase = [
-        ...AppRoutes,
-        { path: '/create-case', element: <CaseCreationpage /> },
-    ];
-
+    
     return (
         <div>
-            {/* Show Layout (Navbar) only if authenticated */}
-            {isAuthenticated && <Layout onLogout={handleLogout} />}
+            {/* ✅ TEMP FIX: Always Show Navbar */}
+            <Layout onLogout={handleLogout} />
 
             <Routes>
-                {/* Default route - Redirect to Login if not authenticated */}
-                <Route path="/" element={!isAuthenticated ? <Navigate to="/login" /> : <Navigate to="/home" />} />
-
-                {/* Login Route (Pass handleLogin function to Login component) */}
+                <Route path="/" element={<Navigate to="/home" />} />
                 <Route path="/login" element={<Login onLogin={handleLogin} />} />
-
-                {/* Home Route (Only accessible if authenticated) */}
-                <Route path="/home" element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
-
-                {/* Forgot Password Route */}
+                <Route path="/home" element={<Home />} />
+                <Route path="/create-case" element={<CaseCreationpage />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/category/:categoryId" element={<CategoryDetailsPage />} />
 
-                {/* Protected routes */}
-                {appRoutesWithCreateCase.map((route, index) => {
-                    const { element, ...rest } = route;
-                    return (
-                        <Route
-                            key={index}
-                            {...rest}
-                            element={isAuthenticated ? element : <Navigate to="/login" />}
-                        />
-                    );
+                {/* Keep other protected routes */}
+                {AppRoutes.map((route, index) => {
+                    return <Route key={index} {...route} />;
                 })}
             </Routes>
         </div>
     );
 }
+
 
 export default App;

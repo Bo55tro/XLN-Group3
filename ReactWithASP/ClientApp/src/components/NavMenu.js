@@ -14,7 +14,7 @@ export class NavMenu extends Component {
     
     this.state = {
       collapsed: true,
-      isAuthenticated: localStorage.getItem('isAuthenticated') === 'true' // Replace with real auth logic
+      isAuthenticated: true // ✅ TEMP FIX: Always show the navbar
     };
   }
 
@@ -47,12 +47,10 @@ export class NavMenu extends Component {
                 <NavLink tag={Link} className="btn navbar-btn" to="/create-case">Open a Case</NavLink>
               </NavItem>
 
-              {/* Show Logout Button Only When Logged In */}
-              {this.state.isAuthenticated && (
-                <NavItem>
-                  <button className="btn logout-btn" onClick={this.handleLogout}>Logout</button>
-                </NavItem>
-              )}
+              {/* ✅ TEMP FIX: Always Show Logout Button */}
+              <NavItem>
+                <button className="btn navbar-btn" onClick={this.handleLogout}>Logout</button>
+              </NavItem>
             </ul>
           </Collapse>
         </Navbar>

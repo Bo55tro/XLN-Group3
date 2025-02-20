@@ -1,18 +1,104 @@
 .container {
-    max-width: 800px;
-    margin: auto;
-    padding: 2rem;
-    text-align: center;
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.description {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Search Bar */
+.searchBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.searchButton {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+  .searchButton:hover {
+      background-color: #0056b3;
   }
-  
-  .title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
+
+/* Grid Layout */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  width: 80%;
+}
+
+.categoryBox {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+  .categoryBox:hover {
+      transform: scale(1.05);
   }
-  
-  .description {
-    font-size: 1.2rem;
-    color: #666;
+
+.imageContainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.categoryInfo {
+  padding: 10px 0;
+}
+
+  .categoryInfo h3 {
+      margin: 5px 0;
+      font-size: 18px;
   }
-  
+
+  .categoryInfo p {
+      color: gray;
+  }
+
+.noResults {
+  font-size: 16px;
+  color: #ff0000;
+  margin-top: 20px;
+}
