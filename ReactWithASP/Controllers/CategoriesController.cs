@@ -21,6 +21,7 @@ public class CategoriesController : ControllerBase {
         {
             categoryId = c.categoryId,
             categoryName = c.categoryName,
+            categoryImage = c.categoryImage,
             caseCount = _context.Cases.Count(cs => cs.CategoryId == c.categoryId) 
         }).ToListAsync();
         return Ok(categories);
