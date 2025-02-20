@@ -5,7 +5,7 @@ import companyLogo from '../Images/daisy-logo.jpg';
 const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
-        window.location.href = "/home"; // ✅ Instantly redirects to home page
+        window.location.href = "/home"; // Automcatically redirect to home page temporarily for testing
     };
 
     return (

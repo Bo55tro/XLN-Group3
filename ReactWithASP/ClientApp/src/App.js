@@ -12,12 +12,11 @@ import CategoryDetailsPage from './components/CategoryDetailsPage';
 
 
 function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(true); // ✅ Temporary fix: Always true
+    const [isAuthenticated, setIsAuthenticated] = useState(true); // Always treat user as authenicated TEMP!
     const navigate = useNavigate();
 
     useEffect(() => {
-        // ✅ Temporary fix: Always treat user as logged in
-        setIsAuthenticated(true);
+        setIsAuthenticated(true); // Always treat user as authenicated TEMP!
     }, []);
 
     const handleLogin = (e) => {
@@ -33,7 +32,6 @@ function App() {
     
     return (
         <div>
-            {/* ✅ TEMP FIX: Always Show Navbar */}
             <Layout onLogout={handleLogout} />
 
             <Routes>
@@ -44,7 +42,6 @@ function App() {
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/category/:categoryId" element={<CategoryDetailsPage />} />
 
-                {/* Keep other protected routes */}
                 {AppRoutes.map((route, index) => {
                     return <Route key={index} {...route} />;
                 })}

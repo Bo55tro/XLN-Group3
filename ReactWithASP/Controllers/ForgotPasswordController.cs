@@ -38,8 +38,6 @@ namespace ReactWithASP.Controllers
                 return NotFound("Username not found.");
             }
 
-            // Here you would typically check if the email matches the one on record.
-            // Since email isn't stored, we skip that step for now. You can add more validation if needed.
 
             string password = agent.agentPassword; // Retrieve the password from the database
 
@@ -47,7 +45,7 @@ namespace ReactWithASP.Controllers
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("ajack200447@gmail.com", "jtqgkzvddqgfrvck"), // Use your app password here
+                Credentials = new NetworkCredential("ajack200447@gmail.com", "jtqgkzvddqgfrvck"),
                 EnableSsl = true,
             };
 
