@@ -12,28 +12,28 @@ import CategoryDetailsPage from './components/CategoryDetailsPage';
 
 
 function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(true); // ✅ Temporary fix: Always true
+    const [isAuthenticated, setIsAuthenticated] = useState(true); 
     const navigate = useNavigate();
 
     useEffect(() => {
-        // ✅ Temporary fix: Always treat user as logged in
+        
         setIsAuthenticated(true);
     }, []);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        window.location.href = "/home"; // Redirect directly to home
+        window.location.href = "/home"; 
     };
 
     const handleLogout = () => {
         setIsAuthenticated(false);
         localStorage.removeItem('isAuthenticated');
-        navigate('/login'); // Redirect to login after logout
+        navigate('/login'); // Redirected to login after logout
     };
     
     return (
         <div>
-            {/* ✅ TEMP FIX: Always Show Navbar */}
+            
             <Layout onLogout={handleLogout} />
 
             <Routes>

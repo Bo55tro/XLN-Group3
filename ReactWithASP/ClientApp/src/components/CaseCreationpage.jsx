@@ -86,7 +86,7 @@ const CaseCreationpage = () => {
         setDetails([]);
     }, [selectedReason]);
 
-    // Submit the form
+ 
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -96,7 +96,7 @@ const CaseCreationpage = () => {
         }
     
         const today = new Date();
-        const formattedDate = today.toISOString().substring(0, 10); // Extracts YYYY-MM-DD
+        const formattedDate = today.toISOString().substring(0, 10); 
 
     
         const caseData = {
@@ -108,7 +108,7 @@ const CaseCreationpage = () => {
             caseNotes: "Notes from Manager...",
             caseDate: formattedDate,
             caseStatus: "Open",
-            agentId: 1 // Hardcoded for now
+            agentId: 1 
         };
     
         console.log("Submitting case:", JSON.stringify(caseData, null, 2));
@@ -142,7 +142,7 @@ const CaseCreationpage = () => {
             console.log("Case created successfully:", data);
             alert("Case successfully created!");
     
-            // ✅ Reset the form
+            
             setSelectedCategory("");
             setSelectedReason("");
             setSelectedDetail("");

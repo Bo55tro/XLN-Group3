@@ -14,7 +14,7 @@ export class NavMenu extends Component {
     
     this.state = {
       collapsed: true,
-      isAuthenticated: true // ✅ TEMP FIX: Always show the navbar
+      isAuthenticated: true 
     };
   }
 
@@ -25,9 +25,9 @@ export class NavMenu extends Component {
   }
 
   handleLogout() {
-    localStorage.removeItem('isAuthenticated'); // Clear auth state
+    localStorage.removeItem('isAuthenticated'); 
     this.setState({ isAuthenticated: false });
-    window.location.href = '/login'; // Redirect to login
+    window.location.href = '/login'; 
   }
 
   render() {
@@ -47,7 +47,7 @@ export class NavMenu extends Component {
                 <NavLink tag={Link} className="btn navbar-btn" to="/create-case">Open a Case</NavLink>
               </NavItem>
 
-              {/* ✅ TEMP FIX: Always Show Logout Button */}
+              
               <NavItem>
                 <button className="btn navbar-btn" onClick={this.handleLogout}>Logout</button>
               </NavItem>

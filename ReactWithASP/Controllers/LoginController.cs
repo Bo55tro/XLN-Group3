@@ -31,17 +31,16 @@ public class LoginController : ControllerBase
             return Unauthorized(new { message = "Invalid username or password." });
         }
 
-        // ✅ Fix: Implement authentication using Cookies (Session-based login)
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, agent.agentUsername),
-            new Claim("AgentId", agent.agentId.ToString())  // Store user ID as claim
+            new Claim("AgentId", agent.agentId.ToString())  
         };
 
         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         var authProperties = new AuthenticationProperties
         {
-            IsPersistent = true // Keep user logged in (change as needed)
+            IsPersistent = true 
         };
 
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,

@@ -7,23 +7,23 @@
     margin: 0;
 }
 
-/* Container to hold the two sections (left and right) */
+
 .login-container {
     display: flex;
     width: 100%;
     height: 100vh;
 }
 
-/* Left side: Background image only */
+
 .login-left-side {
     flex: 1;
-    background-image: url('../Images/LoginPageLeft.jpg'); /* Path to your background image */
+    background-image: url('../Images/LoginPageLeft.jpg'); 
     background-size: cover;
     background-position: center;
     height: 100vh;
 }
 
-/* Right side: Form */
+
 .login-right-side {
     flex: 1;
     display: flex;
@@ -31,10 +31,10 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    height: 100vh; /* Ensure the right side fills the entire screen */
+    height: 100vh; 
 }
 
-/* Login form styling */
+
 .login-box {
     width: 100%;
     max-width: 400px;
@@ -45,14 +45,14 @@
     text-align: center;
 }
 
-/* Logo styling */
+
 .login-logo img {
-    width: 50px; /* Adjust size */
-    height: auto; /* Adjust size */
+    width: 50px; 
+    height: auto; 
     margin-bottom: 20px;
 }
 
-/* Header: My Account - Login */
+
 .login-header {
     font-size: 24px;
     color: #003064;
@@ -62,7 +62,7 @@
     border-radius: 5px;
 }
 
-/* Form styling */
+
 .login-input-field {
     width: 100%;
     padding: 10px;
@@ -72,7 +72,7 @@
     box-sizing: border-box;
 }
 
-/* Button styling */
+
 .login-submit-btn {
     width: 100%;
     background-color: #003064;
@@ -88,7 +88,7 @@
     background-color: #011934;
 }
 
-/* Links (Forgot password, Create Account) */
+
 .login-links {
     display: flex;
     justify-content: space-between;

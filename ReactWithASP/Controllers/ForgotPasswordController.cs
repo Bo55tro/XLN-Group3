@@ -13,7 +13,7 @@ namespace ReactWithASP.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        // Inject the ApplicationDbContext into the controller
+       
         public ForgotPasswordController(ApplicationDbContext context)
         {
             _context = context;
@@ -38,16 +38,15 @@ namespace ReactWithASP.Controllers
                 return NotFound("Username not found.");
             }
 
-            // Here you would typically check if the email matches the one on record.
-            // Since email isn't stored, we skip that step for now. You can add more validation if needed.
+            
 
             string password = agent.agentPassword; // Retrieve the password from the database
 
-            // Set up SMTP client (using Gmail as an example)
+            
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("ajack200447@gmail.com", "jtqgkzvddqgfrvck"), // Use your app password here
+                Credentials = new NetworkCredential("ajack200447@gmail.com", "jtqgkzvddqgfrvck"), 
                 EnableSsl = true,
             };
 
@@ -63,7 +62,7 @@ namespace ReactWithASP.Controllers
 
             try
             {
-                // Send the email
+                // Sending the email
                 await smtpClient.SendMailAsync(mailMessage);
                 return Ok(new { message = "Password recovery email sent." });
             }
