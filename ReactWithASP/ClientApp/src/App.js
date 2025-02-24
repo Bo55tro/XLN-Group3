@@ -7,16 +7,15 @@ import './custom.css';
 import Login from './components/Login';
 import ForgotPassword from './components/ForgotPassword';
 import { Home } from './components/Home';
-import { CategoriesGrid } from "./components/Home";
 import CategoryDetailsPage from './components/CategoryDetailsPage';
 
 
 function App() {
-    const [isAuthenticated, setIsAuthenticated] = useState(true); // Always treat user as authenicated TEMP!
+    const [, setIsAuthenticated] = useState(true); // Always treat user as authenicated - TEMPORARY!
     const navigate = useNavigate();
 
     useEffect(() => {
-        setIsAuthenticated(true); // Always treat user as authenicated TEMP!
+        setIsAuthenticated(true); // Always treat user as authenicated - TEMPORARY!
     }, []);
 
     const handleLogin = (e) => {
