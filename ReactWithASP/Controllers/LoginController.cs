@@ -40,7 +40,7 @@ public class LoginController : ControllerBase
         var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
         var authProperties = new AuthenticationProperties
         {
-            IsPersistent = true // Keep user logged in TEMP!
+            IsPersistent = true // Keep user logged in  - TEMPORARY!
         };
 
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,

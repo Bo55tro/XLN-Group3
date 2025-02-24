@@ -33,7 +33,7 @@
     margin-bottom: 5px;
 }
 
-/* First Row: Category, Reason, Detail */
+/* Container for First Row - Category, Reason & Detail */
 .createcase-dropdown-container {
     display: flex;
     justify-content: space-between;
@@ -60,7 +60,7 @@
     font-size: 14px;
 }
 
-/* Narrow Container*/
+/* Narrow Container - Client, Title & Comments*/
 .createcase-narrow-container {
     width: 80%;
     max-width: 1000px;
@@ -70,7 +70,7 @@
     align-items: center;
 }
 
-/* Second Row: Case Title & Client */
+/* Second Row - Title & Client */
 .createcase-row {
     display: flex;
     justify-content: center;
@@ -79,7 +79,7 @@
     gap: 40px;
 }
 
-/* Wrapper for both Title and Client */
+/* Wrapper for both Title & Client */
 .createcase-field {
     display: flex;
     flex-direction: column;

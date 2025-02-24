@@ -14,7 +14,7 @@ export class NavMenu extends Component {
     
     this.state = {
       collapsed: true,
-      isAuthenticated: true // Always show navbar TEMP!
+      isAuthenticated: true // Always show navbar - TEMPORARY!
     };
   }
 
@@ -47,7 +47,7 @@ export class NavMenu extends Component {
                 <NavLink tag={Link} className="btn navbar-btn" to="/create-case">Open a Case</NavLink>
               </NavItem>
 
-              {/* Always Show Logout TEMP! */}
+              {/* Always Show Logout - TEMPORARY! */}
               <NavItem>
                 <button className="btn navbar-btn" onClick={this.handleLogout}>Logout</button>
               </NavItem>

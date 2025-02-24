@@ -68,16 +68,16 @@ namespace ReactWithASP.Controllers {
 
             Console.WriteLine($"Extracted Keywords: {newCase.caseKeyWords}");
 
-            // Formatting the date correctly
+            // Formatting the date correctly - DD.MM.YYYY
             if (!DateTime.TryParse(newCase.caseDate.ToString(), out DateTime parsedDate))
             {
                 return BadRequest(new { message = "Invalid date format. Please use YYYY-MM-DD." });
             }
 
-            newCase.caseDate = parsedDate.Date; // Stores only the date part
+            newCase.caseDate = parsedDate.Date; // Stores only the date part - No Time
 
 
-            // Log the incoming data for debugging help
+            // Log the incoming data for debugging help in the console
             Console.WriteLine($"Received case: {JsonSerializer.Serialize(newCase)}");
 
             // Check for missing required fields
