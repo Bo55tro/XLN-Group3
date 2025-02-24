@@ -1,16 +1,17 @@
 ﻿.createcase-container {
     max-width: 1400px;
-    width : 100%;
+    width: 100%;
     margin: 50px auto;
     padding: 30px;
-    background: #f8f9fa; /* Light grey background */
+    background: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.createcase-title{
+
+.createcase-title {
     font-size: 3rem;
     color: #003064;
     font-weight: 400;
@@ -27,9 +28,12 @@
 .createcase-label {
     display: block;
     color: #003064;
-    margin-bottom: 0.5 rem;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
+/* First Row: Category, Reason, Detail */
 .createcase-dropdown-container {
     display: flex;
     justify-content: space-between;
@@ -39,12 +43,11 @@
     gap: 40px;
 }
 
-/* Each dropdown wrapper */
 .createcase-dropdown-wrapper {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 30%; /* Each dropdown takes 30% width */
+    width: 30%;
 }
 
 .createcase-dropdown-box {
@@ -57,23 +60,48 @@
     font-size: 14px;
 }
 
-/* Dropdown label */
-.createcase-label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
+/* Narrow Container*/
+.createcase-narrow-container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Dropdown */
+/* Second Row: Case Title & Client */
+.createcase-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
+    gap: 40px;
+}
+
+/* Wrapper for both Title and Client */
+.createcase-field {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+
+.createcase-text,
 .createcase-select {
     width: 100%;
-    padding: 8px;
+    height: 30px; 
+    padding: auto;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Comments Section */
+.createcase-comments-row {
+    width: 100%; 
+    margin-bottom: 15px;
+}
+
 .createcase-comments {
     width: 100%;
     height: 80px;
@@ -86,46 +114,23 @@
     font-size: 14px;
 }
 
-/* Textarea */
-.createcase-text {
-    width: 100%;
-    height: 80px;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    resize: none;
-}
-
-/* Last row: Client & Submit button */
-.createcase-lastrow {
+.createcase-button-container {
     display: flex;
-    justify-content: space-between;
-    width: 70%;
-    padding: auto;
-    margin: auto;
-    margin-left: 170px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
 }
 
-/* Client Dropdown */
-.createcase-client {
-    width: 45%;
-}
-
-/* Submit Button */
 .createcase-btn {
-    width: 25%;
+    width: 150px;
     height: 35px;
-    padding: auto;
-    margin: auto;
-    margin-top: 30px;
-    font-size: 14px;
     background-color: #003064;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 14px;
 }
 
 .createcase-btn:hover {

@@ -16,6 +16,7 @@ namespace ReactWithASP.Models
         public int CategoryId { get; set; }
         public int ReasonId { get; set; }
         public int DetailId { get; set; }
+        public string caseTitle { get; set; }
         public string caseComments { get; set; }
         public string? caseKeyWords { get; set; }
         public string caseStatus { get; set; }

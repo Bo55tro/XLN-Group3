@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './Casecreationpage.css';
 
-
 const CaseCreationpage = () => {
     const [categories, setCategories] = useState([]);
     const [reasons, setReasons] = useState([]);
@@ -13,6 +12,7 @@ const CaseCreationpage = () => {
     const [selectedDetail, setSelectedDetail] = useState("");
     const [selectedClient, setSelectedClient] = useState("");
     const [comments, setComments] = useState("");
+    const [caseTitle, setCaseTitle] = useState("");
 
     useEffect(() => {
         fetch("https://localhost:7192/api/cases/categories", { 
@@ -34,8 +34,6 @@ const CaseCreationpage = () => {
         console.log("Selected Category:", selectedCategory);
     }, [selectedCategory]);
     
-    
-    // Fetch Reasons when Category is Selected
     useEffect(() => {
         setSelectedReason("");
         setReasons([]); 
@@ -53,7 +51,6 @@ const CaseCreationpage = () => {
         }
     }, [selectedCategory]);
 
-    // Fetch Details when Reason is Selected
     useEffect(() => {
         if (selectedReason) {
             fetch(`https://localhost:7192/api/cases/details/${selectedReason}`, {
@@ -69,13 +66,13 @@ const CaseCreationpage = () => {
         }
     }, [selectedReason]);
 
-
     useEffect(() => {
         fetch("https://localhost:7192/api/cases/clients")
             .then((res) => res.json())
             .then((data) => setClients(data))
             .catch((err) => console.error("Error fetching clients:", err));
     }, []);
+
     useEffect(() => {
         setSelectedReason("");
         setReasons([]);
@@ -86,7 +83,6 @@ const CaseCreationpage = () => {
         setDetails([]);
     }, [selectedReason]);
 
-    // Submit the form
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -96,10 +92,10 @@ const CaseCreationpage = () => {
         }
     
         const today = new Date();
-        const formattedDate = today.toISOString().substring(0, 10); // Extracts YYYY-MM-DD
+        const formattedDate = today.toISOString().substring(0, 10);
 
-    
         const caseData = {
+            caseTitle: caseTitle,
             categoryId: parseInt(selectedCategory),
             reasonId: parseInt(selectedReason),
             detailId: parseInt(selectedDetail),
@@ -142,7 +138,7 @@ const CaseCreationpage = () => {
             console.log("Case created successfully:", data);
             alert("Case successfully created!");
     
-            // ✅ Reset the form
+            setCaseTitle("");
             setSelectedCategory("");
             setSelectedReason("");
             setSelectedDetail("");
@@ -154,19 +150,15 @@ const CaseCreationpage = () => {
             alert("Failed to create case. Check console for details.");
         }
     };
-    
-    
-    
 
     return (
-        <div className = "createcase-container">
-            <h2 className = "createcase-title">Open a Case</h2>
-            <h4 className = "createcase-subtitle">Please fill out the information below</h4>
+        <div className="createcase-container">
+            <h2 className="createcase-title">Open a Case</h2>
+            <h4 className="createcase-subtitle">Please fill out the information below</h4>
 
             <form onSubmit={handleSubmit}>
-
-                <div className = "createcase-dropdown-container"> 
-                    <div className = "createcase-dropdown-wrapper"> 
+                <div className="createcase-dropdown-container"> 
+                    <div className="createcase-dropdown-wrapper"> 
                         <label className="createcase-label">Category</label>
                         <select
                             className="createcase-dropdown-box"
@@ -182,7 +174,7 @@ const CaseCreationpage = () => {
                         </select>
                     </div>
 
-                    <div className = "createcase-dropdown-wrapper">
+                    <div className="createcase-dropdown-wrapper">
                         <label className="createcase-label">Reason</label>
                         <select
                             className="createcase-dropdown-box"
@@ -199,51 +191,70 @@ const CaseCreationpage = () => {
                         </select>
                     </div>
 
-                    <div className = "createcase-dropdown-wrapper"> 
+                    <div className="createcase-dropdown-wrapper"> 
                         <label className="createcase-label">Detail</label>
                         <select
-                        className="createcase-dropdown-box"
-                        value={selectedDetail}
-                        onChange={(e) => setSelectedDetail(e.target.value)}
-                        disabled={!selectedReason}
-                    >
-                        <option value="">Select Detail</option>
-                        {details.map((detail) => (
-                            <option key={detail.detailId} value={detail.detailId}>
-                                {detail.detailName}
-                            </option>
-                        ))}
-                    </select>
-                    </div>
-                </div>
-                
-                <div>
-                    <label className="createcase-label" >Comments</label>
-                    <textarea
-                        className="createcase-comments"
-                        rows="1"
-                        value={comments}
-                        onChange={(e) => setComments(e.target.value)}
-                        placeholder="Enter comments..."
-                    />
-                </div>
-
-                <div className="createcase-lastrow">
-                    <div className="createcase-client">
-                    <label className="createcase-label">Client</label>
-                        <select className="createcase-select" value={selectedClient} onChange={(e) => setSelectedClient(e.target.value)}>
-                            <option value="">Select Client</option>
-                            {clients.map((client) => (
-                                <option key={client.clientId} value={client.clientId}>
-                                    {client.clientName}
+                            className="createcase-dropdown-box"
+                            value={selectedDetail}
+                            onChange={(e) => setSelectedDetail(e.target.value)}
+                            disabled={!selectedReason}
+                        >
+                            <option value="">Select Detail</option>
+                            {details.map((detail) => (
+                                <option key={detail.detailId} value={detail.detailId}>
+                                    {detail.detailName}
                                 </option>
                             ))}
                         </select>
                     </div>
+                </div>
 
+                <div className="createcase-narrow-container">
+                    <div className="createcase-row">
+                        <div className="createcase-field">
+                            <label className="createcase-label">Case Title</label>
+                            <input
+                                type="text"
+                                className="createcase-text"
+                                value={caseTitle}
+                                onChange={(e) => setCaseTitle(e.target.value)}
+                                placeholder="Enter case title..."
+                            />
+                        </div>
+
+                        <div className="createcase-field">
+                            <label className="createcase-label">Client</label>
+                            <select
+                                className="createcase-select"
+                                value={selectedClient}
+                                onChange={(e) => setSelectedClient(e.target.value)}
+                            >
+                                <option value="">Select Client</option>
+                                {clients.map((client) => (
+                                    <option key={client.clientId} value={client.clientId}>
+                                        {client.clientName}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className="createcase-comments-row">
+                        <label className="createcase-label">Comments</label>
+                        <textarea
+                            className="createcase-comments"
+                            rows="1"
+                            value={comments}
+                            onChange={(e) => setComments(e.target.value)}
+                            placeholder="Enter comments..."
+                        />
+                    </div>
+                </div>
+
+                <div className="createcase-button-container">
                     <button type="submit" className="createcase-btn">
-                            Create Case
-                        </button>
+                        Create Case
+                    </button>
                 </div>
             </form>
         </div>
