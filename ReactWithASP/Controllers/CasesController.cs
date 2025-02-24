@@ -56,19 +56,19 @@ namespace ReactWithASP.Controllers {
                 return BadRequest("Invalid case data: Request body is empty.");
             }
 
-            // Assigning caseKeyWords before validation
+            
             if (!string.IsNullOrWhiteSpace(newCase.caseComments))
             {
                 newCase.caseKeyWords = string.Join(",", KeywordExtractor.ExtractKeywords(newCase.caseComments));
             }
             else
             {
-                newCase.caseKeyWords = ""; // Prevents null reference issues
+                newCase.caseKeyWords = ""; // Prevents null references
             }
 
             Console.WriteLine($"Extracted Keywords: {newCase.caseKeyWords}");
 
-            // Formatting the date correctly
+            
             if (!DateTime.TryParse(newCase.caseDate.ToString(), out DateTime parsedDate))
             {
                 return BadRequest(new { message = "Invalid date format. Please use YYYY-MM-DD." });
@@ -98,7 +98,7 @@ namespace ReactWithASP.Controllers {
 
                 int commonWords = existingKeywords.Intersect(newKeywords).Count();
 
-                if (commonWords >= 3) // Checking for duplicate cases
+                if (commonWords >= 3) 
                 {
                     return Conflict(new { message = "Potential duplicate case found.", existingCase });
                 }

@@ -6,6 +6,7 @@ const Login = () => {
     const handleLogin = (e) => {
         e.preventDefault();
         window.location.href = "/home"; // Automcatically redirect to home page temporarily for testing
+
     };
 
     return (

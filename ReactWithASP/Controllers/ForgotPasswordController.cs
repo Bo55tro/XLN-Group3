@@ -13,7 +13,7 @@ namespace ReactWithASP.Controllers
     {
         private readonly ApplicationDbContext _context;
 
-        // Inject the ApplicationDbContext into the controller
+       
         public ForgotPasswordController(ApplicationDbContext context)
         {
             _context = context;
@@ -41,7 +41,7 @@ namespace ReactWithASP.Controllers
 
             string password = agent.agentPassword; // Retrieve the password from the database
 
-            // Set up SMTP client (using Gmail as an example)
+            
             var smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
@@ -61,7 +61,7 @@ namespace ReactWithASP.Controllers
 
             try
             {
-                // Send the email
+                // Sending the email
                 await smtpClient.SendMailAsync(mailMessage);
                 return Ok(new { message = "Password recovery email sent." });
             }

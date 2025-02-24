@@ -12,22 +12,23 @@ import CategoryDetailsPage from './components/CategoryDetailsPage';
 
 
 function App() {
+
     const [isAuthenticated, setIsAuthenticated] = useState(true); // Always treat user as authenicated TEMP!
     const navigate = useNavigate();
 
     useEffect(() => {
-        setIsAuthenticated(true); // Always treat user as authenicated TEMP!
+        setIsAuthenticated(true);
     }, []);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        window.location.href = "/home"; // Redirect directly to home
+        window.location.href = "/home"; 
     };
 
     const handleLogout = () => {
         setIsAuthenticated(false);
         localStorage.removeItem('isAuthenticated');
-        navigate('/login'); // Redirect to login after logout
+        navigate('/login'); // Redirected to login after logout
     };
     
     return (

@@ -13,6 +13,7 @@
     height: 100vh;
 }
 
+
 .login-left-side {
     flex: 1;
     background-image: url('../Images/LoginPageLeft.jpg');

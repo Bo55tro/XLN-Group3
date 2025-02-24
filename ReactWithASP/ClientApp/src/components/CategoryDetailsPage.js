@@ -5,7 +5,9 @@ import styles from "./Home.module.css";
 
 const CategoryDetailsPage = () => {
     const { categoryId } = useParams();
-    const [ category, setCategory ] = useState(null);
+    const [category, setCategory] = useState(null);
+    const [reasons, setReasons] = useState([]);
+    const [cases, setCases] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     useEffect(() => {
@@ -18,7 +20,14 @@ const CategoryDetailsPage = () => {
             })
             .then((data) => {
                 setCategory(data);
-                setLoading(false);
+                return fetch(`http://localhost:7192/api/cases/byCategory/${categoryId}`);
+
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Fetched Cases: ", data);
+                setCases(data);
+                setLoading(false); 
             })
             .catch((err) => {
                 console.error("Error in fetching category details: ", err);

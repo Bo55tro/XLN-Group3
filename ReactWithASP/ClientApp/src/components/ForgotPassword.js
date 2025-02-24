@@ -8,13 +8,13 @@ const ForgotPassword = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Basic input validation
+        
         if (!username || !email) {
             setMessage("Please fill in both username and email.");
             return;
         }
 
-        // Call backend API to handle the forgot password logic
+        
         fetch('/api/forgot-password', {
             method: 'POST',
             headers: {
@@ -25,7 +25,7 @@ const ForgotPassword = () => {
             .then((response) => response.json())
             .then((data) => {
                 if (data.message) {
-                    setMessage(data.message); // Show success or failure message
+                    setMessage(data.message); 
                 }
             })
             .catch((error) => {

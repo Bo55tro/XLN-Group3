@@ -94,6 +94,7 @@ const CaseCreationpage = () => {
         const today = new Date();
         const formattedDate = today.toISOString().substring(0, 10);
 
+
         const caseData = {
             caseTitle: caseTitle,
             categoryId: parseInt(selectedCategory),
@@ -104,7 +105,7 @@ const CaseCreationpage = () => {
             caseNotes: "Notes from Manager...",
             caseDate: formattedDate,
             caseStatus: "Open",
-            agentId: 1 // Hardcoded for now
+            agentId: 1 
         };
     
         console.log("Submitting case:", JSON.stringify(caseData, null, 2));
@@ -138,6 +139,7 @@ const CaseCreationpage = () => {
             console.log("Case created successfully:", data);
             alert("Case successfully created!");
     
+
             setCaseTitle("");
             setSelectedCategory("");
             setSelectedReason("");
